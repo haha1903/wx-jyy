@@ -1,0 +1,82 @@
+/* CSS Document */
+
+body {
+	margin:0px;
+	text-align:center;
+	background-image:url(/image/common/back.gif);
+	background-position:center top;
+	background-repeat:no-repeat;
+	}
+
+.contentBody {
+	margin-left:auto;
+	margin-right:auto;
+	width:850px;
+	text-align:left;
+	}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,form {
+	margin:0px;
+	padding:0px;
+	}
+
+h2 {
+	height:110px;
+	text-indent:-9999px;
+	font-size:14px;
+	background-repeat:no-repeat;
+	clear:both;
+	}
+
+h3 {
+	height:30px;
+	background-color:#45aae3;
+	color: white;
+	line-height: 30px;
+	vertical-align: middle;
+	padding-left: 6px;
+	font-size: 16px;
+}
+h5 {
+	width:300px;
+	height:28px;
+	/* background-image:url(/image/common/back.jpg); */
+	color:#45aae3;
+	line-height: 30px;
+	vertical-align: middle;
+	padding-left: 6px;
+	font-size: 16px;
+	
+}
+
+img {
+	border:none;
+	}
+
+.clear {
+	clear:both;
+	}
+
+
+a:link {
+	color:#45aae3;
+	text-decoration:underline;
+	}
+
+a:visited {
+	color:#446099;
+	text-decoration:underline;
+	}
+
+a:hover {
+	color:#84D1FD;
+	text-decoration:underline;
+	}
+
+.height {
+	height:500px;
+	}
+
+
+
+

@@ -1,0 +1,165 @@
+/* CSS Document */
+@import "/css/common/common.css";
+@import "/css/common/font.css";
+@import "/css/common/header.css";
+@import "/css/common/navi.css";
+@import "/css/common/pan.css";
+@import "/css/common/footer.css";
+
+@import "/css/common/contents1.css";
+
+@import "/css/common/left_outline.css";
+@import "/css/common/right.css";
+
+
+#navi .a a{
+	background-position:0px -35px;
+	}
+
+#contents1 {
+	padding:0px 0px 0px 0px;
+	}
+
+/*--------------------------*/
+/*   */
+/*--------------------------*/
+#contents1 .box {
+	background-image:url(/image/home/back.jpg);
+	background-position:bottom left;
+	background-repeat:no-repeat;
+	width:850px;
+	padding-bottom:10px;
+	margin-bottom:15px;
+	}
+
+#contents1 .box ul {
+	list-style-type:none;
+	}
+
+#contents1 .box ul li {
+	width:160px;
+	float:left;
+	padding:5px;
+	}
+
+/*--------------------------*/
+/*   */
+/*--------------------------*/
+#contents1 .boxLeft {
+	width:600px;
+	padding-left:10px;
+	float:left;
+	}
+
+#contents1 .boxLeft ul {
+	list-style-type:none;
+	}
+
+#contents1 .boxLeft ul li {
+	background-image:url(/image/home/a3.gif);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	padding-bottom:7px;
+	margin-top:5px;
+	}
+
+#contents1 .boxLeft ul li img {
+	margin-right:10px;
+	vertical-align:middle;
+	}
+
+/*--------------------------*/
+/*   */
+/*--------------------------*/
+#contents1 .boxRight {
+	width:210px;
+	float:right;
+	padding-right:10px;
+	}
+	
+	#contents1 .boxRight_jp {
+	width:210px;
+	float:right;
+	padding-right:10px;
+	}
+
+#contents1 .boxRight .btn {
+	/* display:block; */
+	width:210px;
+	height:200px;
+	 background-image:url(/image/home/lianxi.jpg); 
+	/* text-decoration:none; */
+	/* text-indent:-9999px; */
+	color:black;
+	font-size:14px;
+	text-align: left;
+	font-family: 宋体;
+	font-weight: 900;
+	padding-left: 5px;	
+	}
+
+#contents1 .boxRight_jp .btn {
+	/* display:block; */
+	width:210px;
+	height:200px;
+	 background-image:url(/image/home/lianxi_jp.jpg); 
+	color:black;
+	font-size:14px;
+	text-align: left;
+	font-family: 宋体;
+	font-weight: 900;
+	padding-left: 5px;	
+	}
+
+
+
+#contents1 .topLink {
+	padding-right:10px;
+	clear:both;
+	padding-top:20px;
+	}
+
+#navi .home a {
+	background-color: #84d1fd;
+}
+
+div.ads {
+	width: 850px;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+}
+
+div.adBox {
+	position: relative;
+}
+
+div.ad {
+	height: 350px;
+}
+
+div.icons {
+	font-size: 12px;
+	color: #669933;
+	position: absolute;
+	z-index: 1;
+	bottom: 10px;
+	right: 10px;
+}
+
+div.icons .icon {
+	float: left;
+	border: 1px solid #669933;
+	height: 16px;
+	width: 16px;
+	background-color: white;
+	line-height: 16px;
+	text-align: center;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+div.icons .icon.on {
+	background-color: #669933;
+	color: white;
+}

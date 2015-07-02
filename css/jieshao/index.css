@@ -1,0 +1,92 @@
+/* CSS Document */
+@import "/css/common/common.css";
+@import "/css/common/font.css";
+@import "/css/common/header.css";
+@import "/css/common/navi.css";
+@import "/css/common/pan.css";
+@import "/css/common/footer.css";
+
+@import "/css/common/contents1.css";
+
+@import "/css/common/left_outline.css";
+@import "/css/common/right.css";
+
+
+#navi .g a{
+	background-position:0px -35px;
+	}
+
+#left .a a {
+	background-position:160px 0px;
+	}
+
+h2 {
+	background-image:url(/image/jieshao/title_jieshao.jpg);
+	}
+
+#main .box {
+	margin: 20px 0;
+}
+
+#navi .desc a {
+	background-color: #84d1fd;
+}
+#contents1 .left {
+    float: left;
+    width: 830px;
+}
+#contents1  .right{
+	float:right;
+	vertical-align:text-top;
+	
+}
+
+#contents1 .left .padding {
+    padding-right: 40px;
+}
+
+#right h3 {
+	margin-bottom:20px;
+	}
+
+#right h4 {
+	margin-bottom:15px;
+	}
+
+#right .box {
+	background-image:url(/image/outline/a3.jpg);
+	background-repeat:no-repeat;
+	background-position:top right;
+	width:420px;
+	padding-right:220px;
+	height:320px;
+	}
+
+#right table {
+	border-collapse:collapse;
+	width:824px;
+	border-top:1px solid #BEBEBE;
+	border-left:1px solid #BEBEBE;
+	}
+
+#right th {
+	width:150px;
+	text-align:center;
+	background-color:#EAEAEA;
+	border-bottom:1px solid #BEBEBE;
+	border-right:1px solid #BEBEBE;
+	padding:5px;
+	font-weight:normal;
+	vertical-align:middle;
+	}
+#right th td {
+	text-align: center;
+	vertical-align:middle;
+}
+
+#right td {
+	border-bottom:1px solid #BEBEBE;
+	border-right:1px solid #BEBEBE;
+	padding:5px;
+	vertical-align:top;
+	}

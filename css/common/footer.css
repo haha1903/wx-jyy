@@ -1,0 +1,44 @@
+/* CSS Document */
+
+#footer {
+	clear:both;
+	background-color:#45aae3;
+	height:80px;
+	border-top:10px solid #fff;;
+	}
+
+#footer ul {
+	list-style-type:none;
+	float:left;
+	padding-left:10px;
+	padding-top:10px;
+	}
+
+#footer ul li {
+	float:left;
+	padding-right:10px;
+	}
+
+#footer ul a {
+	font-size:78%;
+	color:#FFFFFF;
+	}
+
+#footer p {
+	color:#FFFFFF;
+	text-align:center;
+	padding-right:10px;
+	padding-top:10px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
