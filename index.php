@@ -30,6 +30,17 @@
 		</div>
 	</div>
 
+		<br>
+
+	<div class="boxLeft boxFull">
+		<img src="image/home/xinwen.jpg" alt="お知らせ">
+		<ul>
+			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年10月，佳与阳与日本栉田工业（株）就来年针对半导体，液晶等制造装置用特殊树脂空气压阀门的开发研制达成共识。</li>
+			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年9月6日至7日，佳与阳携手合作伙伴日本栉田工业（株）精彩亮相“中日制造采购洽谈会－－上海2011展会”。在展会上，佳与阳的工程塑料切削加工产品－－药液、纯水供给用树脂空气压阀门－－得到了极大的关注。</li>
+			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年7月30日，日本大和リテック（株）榊原社長考察佳与阳。佳与阳总经理孟伟斌陪同考察，双方还就工程塑料的切削加工工业前景、高精密机械加工、公司合作等等事项进行了深入的交流。</li>
+			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年3月，佳与阳成立。日本栉田工业（株）及三菱重工空调系统（上海）有限公司等领导光临道贺。支持公司成立！新闻更新</li>
+		</ul>
+	</div>
 
 		<br>
 
