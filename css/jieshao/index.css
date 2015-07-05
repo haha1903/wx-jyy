@@ -90,3 +90,37 @@ h2 {
 	padding:5px;
 	vertical-align:top;
 	}
+
+.jieshaoLeft {
+    float: left;
+	width: 410px;
+}
+.jieshaoRight {
+    float: right;
+	width: 410px;
+}
+.jieshao {
+    height: 300px;
+}
+.homeTitle {
+	color: #4AD;
+	font-weight: 800;
+	padding-top: 4px;
+	padding-left: 7px;
+	font-size: 14px;
+  	height: 24px;
+  	background-image: url(/image/home/home_back.jpg);
+  	background-repeat: repeat-x;
+}
+#contents1 .jieshaoRight ul{
+	margin-left: 20px;
+	list-style-type:circle;
+}
+#contents1 .jieshaoRight ul li {
+	background-image:url(/image/home/a3.gif);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	padding-bottom:7px;
+	margin-top:5px;
+	
+	}
