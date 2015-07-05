@@ -123,18 +123,18 @@
 	background-color: #84d1fd;
 }
 
-div.ads {
+div.infos {
 	width: 850px;
 	height: 350px;
 	overflow: hidden;
 	position: relative;
 }
 
-div.adBox {
+div.infoBox {
 	position: relative;
 }
 
-div.ad {
+div.info {
 	height: 350px;
 }
 
