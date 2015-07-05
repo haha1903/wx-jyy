@@ -15,35 +15,47 @@
 <!-- InstanceBeginEditable name="contents" -->
 
 	<h2>クシダ工業の機械加工</h2>
-	<h3>产品种类</h3>
+
+	<h3>医疗类产品</h3>
 	<ul>
-		&nbsp;
 		<li>
-			<div class="desc"><img src="/image/chanpin/chanpin1.jpg" /></div>
-			<div class="desc"><img src="/image/chanpin/chanpin2.jpg" /></div>
-		</li>
-		<li>&nbsp;</li>
-		<li>
-			<div class="desc"><img src="/image/chanpin/chanpin3.jpg" /></div>
-			<div class="desc"><img src="/image/chanpin/chanpin4.jpg" /></div>
-		</li>
-		<li>&nbsp;</li>
-		<li>
-			<div class="desc"><img src="/image/chanpin/chanpin5.jpg" /></div>
-			<div class="desc"><img src="/image/chanpin/chanpin6.jpg" /></div>
-		</li>
-		<li>&nbsp;</li>
-		<li>
-			<div class="desc"><img src="/image/chanpin/chanpin7.jpg" /></div>
-			<div class="desc"><img src="/image/chanpin/chanpin8.jpg" /></div>
-		</li>
-		<li>&nbsp;</li>
-		<li>
-			<div class="desc"><img src="/image/chanpin/chanpin9.jpg" /></div>
-			<div class="img"></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_yiliao1.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_yiliao2.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_yiliao3.jpg" /></div>
 		</li>
 	</ul>
-	
+
+	<h3>检测设备类产品</h3>
+	<ul>
+		<li>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_jiance1.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_jiance2.jpg" /></div>
+		</li>
+	</ul>
+
+	<h3>半导体类产品</h3>
+	<ul>
+		<li>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_bandaoti1.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_bandaoti2.jpg" /></div>
+		</li>
+	</ul>
+
+
+	<h3>综合类产品</h3>
+	<ul>
+		<li>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_zonghe1.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_zonghe2.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_zonghe3.jpg" /></div>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_zonghe4.jpg" /></div>
+		</li>
+		<li>&nbsp;</li>
+		<li>
+			<div class="desc_jp"><img src="/image/chanpin/chanpin_zonghe5.jpg" /></div>
+		</li>
+	</ul>
+
 
 <!-- InstanceEndEditable -->
 	<?php

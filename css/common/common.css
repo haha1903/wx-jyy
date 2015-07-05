@@ -77,6 +77,15 @@ a:hover {
 	height:500px;
 	}
 
-
+.homeTitle {
+	color: #4AD;
+	font-weight: 800;
+	padding-top: 4px;
+	padding-left: 7px;
+	font-size: 14px;
+  	height: 24px;
+  	background-image: url(/image/home/home_back.jpg);
+  	background-repeat: repeat-x;
+}
 
 
