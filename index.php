@@ -12,19 +12,19 @@
 <script type="text/javascript" src="/js/gundong.js"></script>
 <div id="contents1">
 <!-- InstanceBeginEditable name="contents" -->
-	<div class="ads">
+	<div class="infos">
 		<div class="icons">
 		</div>
-		<div class="adBox">
-			<div class="ad">
+		<div class="infoBox">
+			<div class="info">
 				<img src="/image/home/index_img_jieshao.jpg" />
 			</div>
 		
-			<div class="ad">
+			<div class="info">
 				<img src="/image/home/index_img_chanpin.jpg" />
 			</div>
 			
-			<div class="ad">
+			<div class="info">
 				<img src="/image/home/index_img_linian.jpg" />
 			</div>
 		</div>

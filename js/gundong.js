@@ -3,23 +3,22 @@ var count;
 var t;
 $(function() {
     var interval = 5000;
-    count = $(".ad").size();
-    $(".ad").each(function(i) {
+    count = $(".info").size();
+    $(".info").each(function(i) {
         var icon = $("<div class='icon'>" + (i + 1) + "</div>");
-        var ad = $(this);
         icon.click(function() {
             nextTo(i);
         });
-        $(".ads .icons").append(icon); 
+        $(".infos .icons").append(icon); 
     });
-    $(".ad:first").clone().appendTo($(".adBox"));
+    $(".info:first").clone().appendTo($(".infoBox"));
     var si = setInterval("next()", interval);
-    $(".ads").hover(function() {
+    $(".infos").hover(function() {
         clearInterval(si);
     }, function() {
         si = setInterval("next()", interval);
     });
-    t = $(".adBox").position().top;
+    t = $(".infoBox").position().top;
     next();
 });
 function next() {
@@ -28,13 +27,13 @@ function next() {
     nextTo(current++);
 }
 function nextTo(i) {
-    $(".ads .icons .icon").removeClass("on");
-    $(".ads .icons .icon").eq(i >= count ? 0 : i).addClass("on");
-    if($(".adBox").position().top + $(".adBox").height() <= 350) {
-        $(".adBox").offset({top: 0});
-        $(".adBox").offset({top: -$(".adBox").position().top});
+    $(".infos .icons .icon").removeClass("on");
+    $(".infos .icons .icon").eq(i >= count ? 0 : i).addClass("on");
+    if($(".infoBox").position().top + $(".infoBox").height() <= 350) {
+        $(".infoBox").offset({top: 0});
+        $(".infoBox").offset({top: -$(".infoBox").position().top});
     }
-    $(".adBox").animate({
+    $(".infoBox").animate({
         top: t - 350 * i
     }, 1000);
 }
