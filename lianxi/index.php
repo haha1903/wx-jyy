@@ -41,7 +41,7 @@
 		
         <tr>
 			<th class="s14a">E-mail</th>
-			<td class="s14a">mengweibin@wx-jyy.com</td>
+			<td class="s14a">mwb2001@hotmail.com</td>
 		</tr>
         
 		<tr>
@@ -49,9 +49,12 @@
 			<td class="s14a">
 				<strong>中国区</strong><br>
 				〒214131<br>
-				无锡市滨湖区华庄街道华谊南路经济开发区<br>
-				（震泽路太湖加油站南500米）<br>
-				TEL　86-510-85606316 ／FAX　86-510-85626316 ／MOBILE　86-13771153090<br><br>
+				无锡市新区城南路208号B-1<br>
+				
+				电话　86-510-85606316 ／传真　86-510-85626316 ／手机　86-13771153090<br><br>
+
+				<img src="/image/lianxi/dizhi1.jpg" alt="设备1"><br><br>
+
 				<strong>日本区</strong><br>
 				〒453-0863<br>
 				 愛知県名古屋市中村区八社2－164<br>

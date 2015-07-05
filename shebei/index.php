@@ -50,7 +50,23 @@
 	
 	</ul>
     
-   
+   <h3>加工中心</h3>	
+	<ul>
+		<li>
+			<img src="/image/shebei/chejian.jpg" alt="设备1">
+		</li>
+		<li>&nbsp;</li>
+		<li>
+			<img src="/image/shebei/chejian2.jpg" alt="设备1">
+		</li>
+	</ul>
+
+	<h3>加工工序</h3>	
+	<ul>
+		<li>
+			<img src="/image/shebei/gongxu.jpg" alt="设备1">
+		</li>
+	</ul>
 <!-- InstanceEndEditable -->
 	<?php
 	include("../include/footer.php");
