@@ -178,3 +178,7 @@ div.icons .icon.on {
   	background-image: url(/image/home/home_back.jpg);
   	background-repeat: repeat-x;
 }
+.boxFull img {
+	width: 380px;
+	margin: 10px 5px;
+}
