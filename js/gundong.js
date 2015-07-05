@@ -1,7 +1,8 @@
 var current = 0;
 var count;
+var t;
 $(function() {
-    var interval = 4500;
+    var interval = 5000;
     count = $(".ad").size();
     $(".ad").each(function(i) {
         var icon = $("<div class='icon'>" + (i + 1) + "</div>");
@@ -9,7 +10,7 @@ $(function() {
         icon.click(function() {
             nextTo(i);
         });
-        $(".ads .icons").append(icon);
+        $(".ads .icons").append(icon); 
     });
     $(".ad:first").clone().appendTo($(".adBox"));
     var si = setInterval("next()", interval);
@@ -18,6 +19,7 @@ $(function() {
     }, function() {
         si = setInterval("next()", interval);
     });
+    t = $(".adBox").position().top;
     next();
 });
 function next() {
@@ -32,9 +34,7 @@ function nextTo(i) {
         $(".adBox").offset({top: 0});
         $(".adBox").offset({top: -$(".adBox").position().top});
     }
-    if(i > 0) {
-        $(".adBox").animate({
-            top: "-=350"
-        }, 1000);
-    }
+    $(".adBox").animate({
+        top: t - 350 * i
+    }, 1000);
 }
