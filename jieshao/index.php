@@ -34,7 +34,7 @@
 			*按客户要求，也承接铜材和铝材为主的配件产品。
 		  </p>
 		  <br>
-		<img alt="" src="/image/jieshao/gongsimen.jpg">
+		<img alt="" src="/image/jieshao/guanyu1.jpg">
 		<img alt="" src="/image/jieshao/shebei4.jpg">
 		
 		</div>
