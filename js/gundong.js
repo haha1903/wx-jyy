@@ -1,7 +1,7 @@
 var current = 0;
 var count;
 $(function() {
-    var interval = 5000;
+    var interval = 4500;
     count = $(".ad").size();
     $(".ad").each(function(i) {
         var icon = $("<div class='icon'>" + (i + 1) + "</div>");
