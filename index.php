@@ -33,7 +33,7 @@
 		<br>
 
 	<div class="boxLeft boxFull">
-		<img src="image/home/xinwen.jpg" alt="お知らせ">
+		<div class="homeTitle">公司资质</div>
 		<ul>
 			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年10月，佳与阳与日本栉田工业（株）就来年针对半导体，液晶等制造装置用特殊树脂空气压阀门的开发研制达成共识。</li>
 			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年9月6日至7日，佳与阳携手合作伙伴日本栉田工业（株）精彩亮相“中日制造采购洽谈会－－上海2011展会”。在展会上，佳与阳的工程塑料切削加工产品－－药液、纯水供给用树脂空气压阀门－－得到了极大的关注。</li>
@@ -45,7 +45,7 @@
 		<br>
 
 	<div class="boxLeft">
-		<img src="image/home/xinwen.jpg" alt="お知らせ">
+		<div class="homeTitle">公司新闻</div>
 		<ul>
 			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年10月，佳与阳与日本栉田工业（株）就来年针对半导体，液晶等制造装置用特殊树脂空气压阀门的开发研制达成共识。</li>
 			<li class="s12a"><img src="image/home/a2.gif" alt="new">2011年9月6日至7日，佳与阳携手合作伙伴日本栉田工业（株）精彩亮相“中日制造采购洽谈会－－上海2011展会”。在展会上，佳与阳的工程塑料切削加工产品－－药液、纯水供给用树脂空气压阀门－－得到了极大的关注。</li>
