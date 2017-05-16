@@ -1,0 +1,7 @@
+version: "2"
+services:
+  wxjyy2:
+    build: .
+    ports:
+      - "8001:80"
+
