@@ -3,7 +3,7 @@
 
 #header
 {
-	background-image:url(/image/common/header/back.gif);
+	background-image:url(http://image.wx-jyy.com/image/common/header/back.gif);
 	background-repeat:repeat-x;
 	height:66px;
 }
@@ -21,7 +21,7 @@
 	display:block;
 	width:375px;
 	height:45px;
-	background-image:url(/image/common/header/1.png);
+	background-image:url(http://image.wx-jyy.com/image/common/header/1.png);
 	background-repeat:no-repeat;
 }
 
@@ -32,7 +32,7 @@
 	display:block;
 	width:375px;
 	height:45px;
-	background-image:url(/image/common/header/logo_jp.png);
+	background-image:url(http://image.wx-jyy.com/image/common/header/logo_jp.png);
 	background-repeat:no-repeat;
 }
 

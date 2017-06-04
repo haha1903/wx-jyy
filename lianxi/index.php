@@ -55,7 +55,7 @@
 				传真 86-510-85626316<br>
 				手机 86-13771153090<br>
 				邮编 214131<br>
-				<img src="/image/lianxi/dizhi1.jpg" alt="设备1"><br><br>
+				<img src="http://image.wx-jyy.com/image/lianxi/dizhi1.jpg" alt="设备1"><br><br>
 
 				<strong>日本区</strong><br>
 				〒453-0863<br>

@@ -28,21 +28,21 @@
 	<ul>
 
 		<li>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp1.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp3.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp2.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp1.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp3.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp2.jpg" /></div>
 		</li>
 		
 		<li>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp4.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp5.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp6.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp4.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp5.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp6.jpg" /></div>
 		</li>
 		
 		<li>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp7.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp8.jpg" /></div>
-			<div class="desc_jp"><img src="/image/chanpin/chanpin_jp9.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp7.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp8.jpg" /></div>
+			<div class="desc_jp"><img src="http://image.wx-jyy.com/image/chanpin/chanpin_jp9.jpg" /></div>
 		</li>
 		<li>&nbsp;</li>
 

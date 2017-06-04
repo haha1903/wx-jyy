@@ -95,8 +95,8 @@
 		  		</p>
 			 </div>
 		    <br>
-		<img alt="" src="/image/jieshao/gongsimen.jpg">
-		<img alt="" src="/image/jieshao/shebei4.jpg">
+		<img alt="" src="http://image.wx-jyy.com/image/jieshao/gongsimen.jpg">
+		<img alt="" src="http://image.wx-jyy.com/image/jieshao/shebei4.jpg">
 		
 		</div>
 </div>

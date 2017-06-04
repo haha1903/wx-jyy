@@ -3,7 +3,7 @@
 body {
 	margin:0px;
 	text-align:center;
-	background-image:url(/image/common/back.gif);
+	background-image:url(http://image.wx-jyy.com/image/common/back.gif);
 	background-position:center top;
 	background-repeat:no-repeat;
 	}
@@ -40,7 +40,7 @@ h3 {
 h5 {
 	width:300px;
 	height:28px;
-	/* background-image:url(/image/common/back.jpg); */
+	/* background-image:url(http://image.wx-jyy.com/image/common/back.jpg); */
 	color:#45aae3;
 	line-height: 30px;
 	vertical-align: middle;
@@ -85,7 +85,7 @@ a:hover {
 	padding-left: 7px;
 	font-size: 14px;
   	height: 28px;
-  	background-image: url(/image/home/home_back.jpg);
+  	background-image: url(http://image.wx-jyy.com/image/home/home_back.jpg);
   	background-repeat: repeat-x;
 }
 

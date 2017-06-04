@@ -27,23 +27,23 @@
 			
 			<div class="desc">
 				美国原装进口 哈斯VF-2<br>
-				<img src="/image/shebei/shebei1.jpg" alt="设备1">
+				<img src="http://image.wx-jyy.com/image/shebei/shebei1.jpg" alt="设备1">
 			</div>
 			
 			<div class="img">
 				LG MAZAK 200-IIL<br>
-				<img src="/image/shebei/shebei2.jpg" alt="设备2">
+				<img src="http://image.wx-jyy.com/image/shebei/shebei2.jpg" alt="设备2">
 			</div>
 		</li>
 		<li>	
 			<div class="desc">
 				 MITUTOYO光学内视镜(関連会社)<br>
-				<img src="/image/shebei/shebei3.jpg" alt="设备1">
+				<img src="http://image.wx-jyy.com/image/shebei/shebei3.jpg" alt="设备1">
 			</div>
 			
 			<div class="img">
 				MITUTOYO三次元测定器(関連会社)<br>
-				<img src="/image/shebei/shebei5.jpg" alt="设备2">
+				<img src="http://image.wx-jyy.com/image/shebei/shebei5.jpg" alt="设备2">
 			</div>
 			
 		</li>

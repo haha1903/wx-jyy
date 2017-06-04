@@ -17,15 +17,15 @@ include("include/head.php");
         </div>
         <div class="infoBox">
             <div class="info">
-                <img src="/image/home/index_img_jieshao.jpg"/>
+                <img src="http://image.wx-jyy.com/image/home/index_img_jieshao.jpg"/>
             </div>
 
             <div class="info">
-                <img src="/image/home/index_img_chanpin.jpg"/>
+                <img src="http://image.wx-jyy.com/image/home/index_img_chanpin.jpg"/>
             </div>
 
             <div class="info">
-                <img src="/image/home/index_img_linian.jpg"/>
+                <img src="http://image.wx-jyy.com/image/home/index_img_linian.jpg"/>
             </div>
         </div>
     </div>
@@ -35,8 +35,8 @@ include("include/head.php");
     <div class="boxLeft boxFull">
         <div class="homeTitle">公司资质</div>
 
-        <img alt="" src="/image/home/zizhi_e.jpg">
-        <img alt="" src="/image/home/zizhi_c.jpg">
+        <img alt="" src="http://image.wx-jyy.com/image/home/zizhi_e.jpg">
+        <img alt="" src="http://image.wx-jyy.com/image/home/zizhi_c.jpg">
     </div>
 
     <br>

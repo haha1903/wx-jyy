@@ -42,7 +42,7 @@ include("../include/head.php");
             </div>
             <div class="jieshao">
                 <div class="jieshaoLeft">
-                    <img alt="" src="/image/jieshao/guanyu1.jpg">
+                    <img alt="" src="http://image.wx-jyy.com/image/jieshao/guanyu1.jpg">
                 </div>
                 <div class="jieshaoRight">
                     <div class="homeTitle">服务领域</div>
@@ -60,7 +60,7 @@ include("../include/head.php");
             	
             <div class="jieshao">
                 <div class="jieshaoLeft">
-                    <img alt="" src="/image/jieshao/guanli1.jpg">
+                    <img alt="" src="http://image.wx-jyy.com/image/jieshao/guanli1.jpg">
                 </div>
                 <div class="jieshaoRight">
                     <div class="homeTitle">企业模式</div>
@@ -80,7 +80,7 @@ include("../include/head.php");
                     </p>
                 </div>
                 <p class="right">
-                    <img alt="" src="/image/jieshao/qiye.jpg">
+                    <img alt="" src="http://image.wx-jyy.com/image/jieshao/qiye.jpg">
                 </p>
             </div>
         </div>
