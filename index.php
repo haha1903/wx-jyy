@@ -58,7 +58,7 @@ include("include/head.php");
         <!-- 		<p class="btn"> -->
         <!-- 			<br><br><br> -->
         <!-- 			中国区<br>TEL 86-510-85606316<br>FAX　86-510-85626316<br>MOBILE　86-13771153090<br><br> -->
-        <!-- 			日本区<br>MOBILE　0081-9010959278 -->
+        <!-- 			日本区<br>MOBILE　0081-90-1272-8880 -->
 
         <table class="btn" height=180px>
             <tr>
@@ -85,7 +85,7 @@ include("include/head.php");
             </tr>
             <tr>
                 <td>MOBILE</td>
-                <td>0081-9010959278</td>
+                <td>0081-90-1272-8880</td>
             </tr>
         </table>
         <!-- 		</p> -->

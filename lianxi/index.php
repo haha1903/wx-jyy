@@ -61,7 +61,7 @@
 				〒453-0863<br>
 				 愛知県名古屋市中村区八社2－164<br>
 				TEL/FAX&nbsp;&nbsp;&nbsp;052-413-5519<br>
-				MOBILE　0081-9010959278<br><br>
+				MOBILE　0081-90-1272-8880<br><br>
 			</td>
 		</tr>
 		</table>

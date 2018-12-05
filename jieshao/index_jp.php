@@ -67,7 +67,7 @@
 		<tr>
 			<th class="s14a">関連会社</th>
 			<td class="s14a">
-				<strong>櫛田工業株式会社（甚目寺工業）</strong><br>
+				<strong>櫛田工業株式会社</strong><br>
 				〒490-1107<br>
 				愛知県海部郡甚目寺町森1番地の12<br><br>
 				<strong>中堅商事株式会社</strong><br>
