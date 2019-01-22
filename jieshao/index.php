@@ -67,7 +67,7 @@ include("../include/head.php");
                     <ul>
                         <li class="s12a">融合日本的先端技术和管理方式</li>
 						<li class="s12a">引进原装进口数控设备和检测设备，保证产品质量</li>
-						<li class="s12a">和客户建立良好的信誉，为客户提供最优质的产品</li>
+						<li class="s12a">和客户建立良好的信誉，为客户提供优质的产品</li>
                     </ul>
                 </div>
             </div>
