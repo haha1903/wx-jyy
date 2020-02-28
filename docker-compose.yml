@@ -1,7 +1,9 @@
-version: "2"
+version: "3"
 services:
-  wxjyy2:
-    build: .
+  wxjyy:
+    image: php:apache
+    volumes:
+      - .:/var/www/html/
     ports:
       - "8001:80"
 
