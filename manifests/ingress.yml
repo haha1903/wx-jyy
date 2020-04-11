@@ -8,14 +8,14 @@ metadata:
   name: ingress-wx-jyy
 spec:
   rules:
-    - host: wx-jyy.ca34fb964e954c01a594.southeastasia.aksapp.io
+    - host: www.wx-jyy.com
       http:
         paths:
           - backend:
               serviceName: wx-jyy
               servicePort: 80
             path: /
-    - host: test.wx-jyy.com
+    - host: wx-jyy.com
       http:
         paths:
           - backend:
@@ -24,5 +24,6 @@ spec:
             path: /
   tls:
     - hosts:
-        - test.wx-jyy.com
+        - www.wx-jyy.com
+        - wx-jyy.com
       secretName: wx-jyy-tls
