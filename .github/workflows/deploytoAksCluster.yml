@@ -1,0 +1,51 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: haicr.azurecr.io
+        username: ${{ secrets.acr_haicr_username }}
+        password: ${{ secrets.acr_haicr_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t haicr.azurecr.io/k8s:${{ github.sha }}
+        docker push haicr.azurecr.io/k8s:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_k8s_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep k8s2fab | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace k8s2fab`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: k8s2fab
+        container-registry-url: haicr.azurecr.io
+        container-registry-username: ${{ secrets.acr_haicr_username }}
+        container-registry-password: ${{ secrets.acr_haicr_password }}
+        secret-name: k8sdockerauth
+       
+    - uses: azure/k8s-deploy@v1
+      with:
+        namespace: k8s2fab
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+          manifests/ingress.yml
+        images: |
+          haicr.azurecr.io/k8s:${{ github.sha }}
+        imagepullsecrets: |
+          k8sdockerauth
