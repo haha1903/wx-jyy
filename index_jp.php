@@ -17,15 +17,15 @@
 		</div>
 		<div class="infoBox">
 			<div class="info">
-				<img src="http://image.wx-jyy.com/image/home/index_img_jieshao_jp.jpg" />
+				<img src="/image/home/index_img_jieshao_jp.jpg" />
 			</div>
 		
 			<div class="info">
-				<img src="http://image.wx-jyy.com/image/home/index_img_chanpin_jp.jpg" />
+				<img src="/image/home/index_img_chanpin_jp.jpg" />
 			</div>
 			
 			<div class="info">
-				<img src="http://image.wx-jyy.com/image/home/index_img_linian_jp.jpg" />
+				<img src="/image/home/index_img_linian_jp.jpg" />
 			</div>
 		</div>
 	</div>

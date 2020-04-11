@@ -21,7 +21,7 @@
 	}
 
 h2 {
-	background-image:url(http://image.wx-jyy.com/image/jieshao/title_jieshao.jpg);
+	background-image:url(/image/jieshao/title_jieshao.jpg);
 	}
 
 #main .box {
@@ -54,7 +54,7 @@ h2 {
 	}
 
 #right .box {
-	background-image:url(http://image.wx-jyy.com/image/outline/a3.jpg);
+	background-image:url(/image/outline/a3.jpg);
 	background-repeat:no-repeat;
 	background-position:top right;
 	width:420px;
@@ -108,7 +108,7 @@ h2 {
 	list-style-type:circle;
 }
 #contents1 .jieshaoRight ul li {
-	background-image:url(http://image.wx-jyy.com/image/home/a3.gif);
+	background-image:url(/image/home/a3.gif);
 	background-position:bottom;
 	background-repeat:no-repeat;
 	padding-bottom:7px;
