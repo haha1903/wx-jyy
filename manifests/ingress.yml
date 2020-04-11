@@ -1,17 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: "k8s"
-    labels:
-        app: "k8s"
-    annotations:
-        kubernetes.io/ingress.class: addon-http-application-routing
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  name: ingress-wx-jyy
 spec:
-    rules:
-        - host: k8s2fab-k8s.ca34fb964e954c01a594.southeastasia.aksapp.io
-          http:
-            paths:
-            - path: /
-              backend:
-                serviceName: "k8s"
-                servicePort: 80
+  rules:
+    - host: wx-jyy.ca34fb964e954c01a594.southeastasia.aksapp.io
+      http:
+        paths:
+          - backend:
+              serviceName: wx-jyy
+              servicePort: 80
+            path: /
+  tls:
+    - hosts:
+        - wx-jyy.ca34fb964e954c01a594.southeastasia.aksapp.io
+      secretName: wx-jyy-tls
