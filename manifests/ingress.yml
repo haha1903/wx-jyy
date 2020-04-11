@@ -15,7 +15,15 @@ spec:
               serviceName: wx-jyy
               servicePort: 80
             path: /
+    - host: test.wx-jyy.com
+      http:
+        paths:
+          - backend:
+              serviceName: wx-jyy
+              servicePort: 80
+            path: /
   tls:
     - hosts:
         - wx-jyy.ca34fb964e954c01a594.southeastasia.aksapp.io
+        - test.wx-jyy.com
       secretName: wx-jyy-tls
