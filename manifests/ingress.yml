@@ -24,6 +24,5 @@ spec:
             path: /
   tls:
     - hosts:
-        - wx-jyy.ca34fb964e954c01a594.southeastasia.aksapp.io
         - test.wx-jyy.com
       secretName: wx-jyy-tls
