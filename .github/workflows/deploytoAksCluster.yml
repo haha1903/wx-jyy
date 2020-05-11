@@ -7,15 +7,15 @@ jobs:
     
     - uses: azure/docker-login@v1
       with:
-        login-server: haicr.azurecr.io
-        username: ${{ secrets.acr_haicr_username }}
-        password: ${{ secrets.acr_haicr_password }}
+        login-server: beacr.azurecr.io
+        username: ${{ secrets.acr_beacr_username }}
+        password: ${{ secrets.acr_beacr_password }}
     
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t haicr.azurecr.io/k8s:${{ github.sha }}
-        docker push haicr.azurecr.io/k8s:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t beacr.azurecr.io/wx-jyy:${{ github.sha }}
+        docker push beacr.azurecr.io/wx-jyy:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -33,9 +33,9 @@ jobs:
     - uses: azure/k8s-create-secret@v1
       with:
         namespace: default
-        container-registry-url: haicr.azurecr.io
-        container-registry-username: ${{ secrets.acr_haicr_username }}
-        container-registry-password: ${{ secrets.acr_haicr_password }}
+        container-registry-url: beacr.azurecr.io
+        container-registry-username: ${{ secrets.acr_beacr_username }}
+        container-registry-password: ${{ secrets.acr_beacr_password }}
         secret-name: k8sdockerauth
        
     - uses: azure/k8s-deploy@v1
@@ -46,6 +46,6 @@ jobs:
           manifests/service.yml
           manifests/ingress.yml
         images: |
-          haicr.azurecr.io/k8s:${{ github.sha }}
+          beacr.azurecr.io/wx-jyy:${{ github.sha }}
         imagepullsecrets: |
           k8sdockerauth

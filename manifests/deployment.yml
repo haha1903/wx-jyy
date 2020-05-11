@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
         - name: "wx-jyy"
-          image: "haicr.azurecr.io/k8s"
+          image: "beacr.azurecr.io/wx-jyy"
           ports:
           - containerPort: 80
