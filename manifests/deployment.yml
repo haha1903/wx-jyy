@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: "wx-jyy"
 spec:
+  selector:
+    matchLabels:
+      app: "wx-jyy"
   replicas: 2
   template:
     metadata:
