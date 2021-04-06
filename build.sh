@@ -1,2 +1,2 @@
-docker build . -t scalaone/wx-jyy
-docker push scalaone/wx-jyy
+docker build . -t haiacr.azurecr.io/wx-jyy
+docker push haiacr.azurecr.io/wx-jyy
