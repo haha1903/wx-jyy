@@ -1,21 +1,42 @@
 <?php
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    register_nav_menus(['primary' => 'Primary Menu']);
 });
 
 add_action('wp_enqueue_scripts', function () {
-    // Page-specific CSS is loaded directly in each template; only enqueue jquery for home slider.
     wp_enqueue_script('jquery');
     wp_enqueue_script(
         'wx-gundong',
         get_template_directory_uri() . '/js/gundong.js',
-        ['jquery'], '1.0', true
+        ['jquery'], '1.1', true
     );
 });
 
-// Rewrite any /image/ or /css/ references in legacy HTML so they hit the theme directory.
 function wx_asset($rel) {
     return esc_attr(get_template_directory_uri() . '/' . ltrim($rel, '/'));
+}
+
+/** zh (default) or jp, controlled by ?lang= or wx_lang cookie. */
+function wx_lang() {
+    static $cached = null;
+    if ($cached !== null) return $cached;
+    if (isset($_GET['lang'])) {
+        $cached = ($_GET['lang'] === 'jp') ? 'jp' : 'zh';
+        if (!headers_sent()) {
+            setcookie('wx_lang', $cached, time() + 86400 * 30, '/');
+        }
+    } else {
+        $cached = (($_COOKIE['wx_lang'] ?? '') === 'jp') ? 'jp' : 'zh';
+    }
+    return $cached;
+}
+function wx_is_jp() { return wx_lang() === 'jp'; }
+
+/** Same URL with the language toggled. */
+function wx_switch_url() {
+    $target = wx_is_jp() ? 'zh' : 'jp';
+    $uri = preg_replace('/([?&])lang=(zh|jp)/', '$1', $_SERVER['REQUEST_URI']);
+    $uri = rtrim($uri, '?&');
+    $sep = strpos($uri, '?') === false ? '?' : '&';
+    return esc_url($uri . $sep . 'lang=' . $target);
 }

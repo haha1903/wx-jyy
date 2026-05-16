@@ -3,15 +3,36 @@
 $wx_page_css = '/css/outline/index.css';
 get_header();
 $t = get_template_directory_uri();
+$jp = wx_is_jp();
 ?>
 
 <ul id="pan">
-    <li><a href="<?php echo esc_url(home_url('/')); ?>">首页</a></li>
-    <li>&nbsp;&gt;&nbsp;联系我们</li>
+    <?php if ($jp): ?>
+        <li><a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a></li>
+        <li>&nbsp;&gt;&nbsp;お問い合わせ</li>
+    <?php else: ?>
+        <li><a href="<?php echo esc_url(home_url('/')); ?>">首页</a></li>
+        <li>&nbsp;&gt;&nbsp;联系我们</li>
+    <?php endif; ?>
 </ul>
 
 <div id="contents1">
     <h2>クシダ工業の機械加工</h2>
+
+<?php if ($jp): ?>
+    <h3>お問い合わせ</h3>
+    <h5>中国本社</h5>
+    <p class="s13a">〒214131</p>
+    <p class="s13a">中国江蘇省無錫市新区城南路208号B-1</p>
+    <p class="s13a">TEL : 86-510-85606316 / FAX : 86-510-85626316</p>
+    <p></p><br>
+    <p class="s13a">E-mail : mengweibin@wx-jyy.com</p>
+    <h5>佳陽貿易</h5>
+    <p class="s13a">〒453-0863</p>
+    <p class="s13a">愛知県名古屋市中村区八社2－164</p>
+    <p class="s13a">TEL / FAX  :052-413-5519</p>
+    <p class="s13a">携帯 : 090-1272-8880</p>
+<?php else: ?>
     <h3>公司概要</h3>
     <div id="right">
         <h4></h4>
@@ -40,5 +61,6 @@ $t = get_template_directory_uri();
             </tr>
         </table>
     </div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
