@@ -4,8 +4,9 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    // Single, modern stylesheet (theme root style.css).
-    wp_enqueue_style('wx-jyy', get_stylesheet_uri(), [], '2.0');
+    // Single, modern stylesheet (theme root style.css). Version pegged to file mtime so changes bust CDN cache automatically.
+    $css = get_template_directory() . '/style.css';
+    wp_enqueue_style('wx-jyy', get_stylesheet_uri(), [], file_exists($css) ? filemtime($css) : null);
     wp_enqueue_script('jquery');
     wp_enqueue_script(
         'wx-gundong',
