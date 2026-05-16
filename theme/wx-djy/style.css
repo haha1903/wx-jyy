@@ -258,14 +258,16 @@ body:not(.home) #contents1.about-page{padding:0;max-width:none}
 #right td strong{display:inline-block;margin:6px 0;color:var(--ink)}
 
 /* ---------- contact page two-column layout ---------- */
-.page-template-templates-lianxi #contents1{max-width:1200px;margin:0 auto}
-.page-template-templates-lianxi .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.page-template-templates-lianxi .contact-grid #right{max-width:none;margin:0;padding:0}
-.page-template-templates-lianxi #contact-form-wrap{max-width:none !important;margin:0 !important;padding:0 !important;clear:none !important}
-.page-template-templates-lianxi #contact-form-wrap h3{text-align:left !important;margin:0 0 16px !important;font-size:20px}
-.page-template-templates-lianxi .forminator-row{margin-bottom:12px}
+.page-template-lianxi #contents1{max-width:1200px;margin:0 auto}
+.page-template-lianxi .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.page-template-lianxi .contact-grid #right{max-width:none;margin:0;padding:0}
+.page-template-lianxi #contact-form-wrap{max-width:none !important;margin:0 !important;padding:0 !important;clear:none !important}
+.page-template-lianxi #contact-form-wrap h3{text-align:left !important;margin:0 0 16px !important;font-size:20px}
+.page-template-lianxi .forminator-row{margin-bottom:12px}
+.page-template-lianxi .forminator-input,
+.page-template-lianxi .forminator-textarea{background:#fff !important;border:1px solid var(--line) !important}
 @media (max-width:900px){
-  .page-template-templates-lianxi .contact-grid{grid-template-columns:1fr;gap:40px}
+  .page-template-lianxi .contact-grid{grid-template-columns:1fr;gap:40px}
 }
 
 /* ---------- footer ---------- */
