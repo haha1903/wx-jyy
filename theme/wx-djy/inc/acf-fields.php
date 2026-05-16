@@ -193,7 +193,8 @@ add_action('acf/init', function () {
             ['key' => 'f_contact_intro_jp', 'name' => 'contact_intro_jp', 'label' => '页眉 (日本語)', 'type' => 'text', 'default_value' => 'お問い合わせ'],
             ['key' => 'f_contact_form_title_zh', 'name' => 'contact_form_title_zh', 'label' => '在线留言标题 (中文)', 'type' => 'text', 'default_value' => '在线留言'],
             ['key' => 'f_contact_form_title_jp', 'name' => 'contact_form_title_jp', 'label' => '在线留言标题 (日本語)', 'type' => 'text', 'default_value' => 'お問い合わせフォーム'],
-            ['key' => 'f_contact_form_id', 'name' => 'contact_form_id', 'label' => 'Forminator 表单 ID', 'type' => 'number', 'instructions' => '在 Forminator → Forms 列表里复制表单 ID 填入；留空则不显示表单。'],
+            ['key' => 'f_contact_form_id', 'name' => 'contact_form_id', 'label' => 'Forminator 表单 ID (中文)', 'type' => 'number', 'instructions' => '中文表单 ID（在 Forminator → Forms 列表里复制）'],
+            ['key' => 'f_contact_form_id_jp', 'name' => 'contact_form_id_jp', 'label' => 'Forminator 表单 ID (日本語)', 'type' => 'number', 'instructions' => '日语表单 ID；留空时日语访问者也看中文表单'],
         ],
     ]);
 
