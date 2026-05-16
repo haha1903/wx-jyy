@@ -51,21 +51,20 @@ $belief_cta_url = get_field('belief_cta_url', $page_id) ?: '/jieshao/';
     <?php endif; ?>
 
     <!-- Business categories -->
-    <?php $cats = (array) get_field('cats', $page_id); if ($cats): ?>
+    <?php $cats = (array) get_post_meta($page_id, 'cats', true); if ($cats): ?>
     <section class="section">
         <h3><?= esc_html(wx_field('cats_title', $page_id)) ?></h3>
         <div class="cat-grid">
             <?php foreach ($cats as $row):
-                $url = wx_img_url($row['image'] ?? '');
+                $url   = wx_img_url($row['image'] ?? '');
                 $title = $jp ? ($row['title_jp'] ?? '') : ($row['title_zh'] ?? '');
-                $desc  = $jp ? ($row['desc_jp']  ?? '') : ($row['desc_zh']  ?? '');
+                $desc  = $jp ? ($row['desc_jp'] ?? '')  : ($row['desc_zh'] ?? '');
                 if (!$title && $jp) $title = $row['title_zh'] ?? '';
-                if (!$desc && $jp)  $desc  = $row['desc_zh']  ?? '';
+                if (!$desc  && $jp) $desc  = $row['desc_zh'] ?? '';
+                $href  = $row['url'] ?? '/';
             ?>
-                <a class="cat-card" href="<?= esc_url(home_url($row['url'] ?? '/')) ?>">
-                    <?php if ($url): ?>
-                        <div class="ph"><img src="<?= esc_url($url) ?>" alt=""></div>
-                    <?php endif; ?>
+                <a class="cat-card" href="<?= esc_url(home_url($href)) ?>">
+                    <?php if ($url): ?><div class="ph"><img src="<?= esc_url($url) ?>" alt=""></div><?php endif; ?>
                     <div class="body">
                         <h4><?= esc_html($title) ?></h4>
                         <p><?= wp_kses_post($desc) ?></p>
@@ -95,7 +94,7 @@ $belief_cta_url = get_field('belief_cta_url', $page_id) ?: '/jieshao/';
     <?php endif; ?>
 
     <!-- Factory showcase -->
-    <?php $factory = (array) get_field('factory', $page_id); if ($factory): ?>
+    <?php $factory = (array) get_post_meta($page_id, 'factory', true); if ($factory): ?>
     <section class="section compact">
         <h3><?= esc_html(wx_field('factory_title', $page_id)) ?></h3>
         <div class="factory-grid">

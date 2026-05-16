@@ -33,9 +33,9 @@ $page_id = get_the_ID() ?: get_page_by_path('jieshao')->ID ?? 0;
 
     <!-- Features -->
     <?php
-    $f1_items = (array) get_field('feature1_items', $page_id);
-    $f2_items = (array) get_field('feature2_items', $page_id);
-    if (wx_field('feature1_title', $page_id) || wx_field('feature2_title', $page_id) || $f1_items || $f2_items): ?>
+    $f1_items = (array) get_post_meta($page_id, 'feature1_items', true);
+    $f2_items = (array) get_post_meta($page_id, 'feature2_items', true);
+    if ($f1_items || $f2_items || wx_field('feature1_title', $page_id) || wx_field('feature2_title', $page_id)): ?>
     <section class="about-block alt">
         <div class="inner two-col">
             <div class="feature-card">
