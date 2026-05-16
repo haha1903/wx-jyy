@@ -2,6 +2,7 @@
 /* Template Name: 联系我们 */
 get_header();
 $jp = wx_is_jp();
+$page_id = get_the_ID();
 
 $cn_label = wx_field('cn_label', wx_options_pid());
 $jp_label = wx_field('jp_label', wx_options_pid());
