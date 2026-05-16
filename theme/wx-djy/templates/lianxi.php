@@ -104,11 +104,22 @@ $baidu_lat  = get_field('baidu_map_lat', $opt);
         </aside>
     </div>
 
-    <!-- BOTTOM: Baidu Map full width -->
-    <?php if ($baidu_ak && $baidu_lng && $baidu_lat): ?>
-        <section class="lianxi-map">
-            <div id="baidu-map" data-ak="<?= esc_attr($baidu_ak) ?>" data-lng="<?= esc_attr($baidu_lng) ?>" data-lat="<?= esc_attr($baidu_lat) ?>" data-title="<?= esc_attr($company_name ?: '') ?>" data-addr="<?= esc_attr($cn_addr ?: '') ?>"></div>
+    <!-- BOTTOM: legacy hand-drawn map + Baidu map -->
+    <?php $legacy_map = wx_img_url(get_field('cn_map', $opt)); ?>
+    <?php if ($legacy_map || ($baidu_ak && $baidu_lng && $baidu_lat)): ?>
+        <section class="lianxi-maps">
+            <?php if ($legacy_map): ?>
+                <div class="lianxi-map lianxi-map-legacy">
+                    <img src="<?= esc_url($legacy_map) ?>" alt="<?= esc_attr($company_name) ?>">
+                </div>
+            <?php endif; ?>
+            <?php if ($baidu_ak && $baidu_lng && $baidu_lat): ?>
+                <div class="lianxi-map">
+                    <div id="baidu-map" data-ak="<?= esc_attr($baidu_ak) ?>" data-lng="<?= esc_attr($baidu_lng) ?>" data-lat="<?= esc_attr($baidu_lat) ?>" data-title="<?= esc_attr($company_name ?: '') ?>" data-addr="<?= esc_attr($cn_addr ?: '') ?>"></div>
+                </div>
+            <?php endif; ?>
         </section>
+        <?php if ($baidu_ak && $baidu_lng && $baidu_lat): ?>
         <script src="https://api.map.baidu.com/api?v=3.0&ak=<?= esc_attr($baidu_ak) ?>&callback=wxInitBaiduMap"></script>
         <script>
         function wxInitBaiduMap(){
@@ -128,17 +139,7 @@ $baidu_lat  = get_field('baidu_map_lat', $opt);
             map.openInfoWindow(info, pt);
         }
         </script>
-    <?php else: ?>
-        <section class="lianxi-map lianxi-map-placeholder">
-            <div class="placeholder-inner">
-                <?php $legacy_map = wx_img_url(get_field('cn_map', $opt)); ?>
-                <?php if ($legacy_map): ?>
-                    <img src="<?= esc_url($legacy_map) ?>" alt="<?= esc_attr($company_name) ?>">
-                <?php else: ?>
-                    <p class="muted"><?= $jp ? '地図準備中' : '地图加载中…（请在站点设置里配置百度地图 AK + 坐标）' ?></p>
-                <?php endif; ?>
-            </div>
-        </section>
+        <?php endif; ?>
     <?php endif; ?>
 
 </div>
