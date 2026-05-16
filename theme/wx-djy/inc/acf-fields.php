@@ -48,25 +48,11 @@ add_action('acf/init', function () {
 
             [['key' => 'f_tab_certs', 'label' => '公司资质', 'type' => 'tab']],
             $txt2('certs_title', '区块标题'),
-            [[
-                'key' => 'f_certs', 'name' => 'certs', 'label' => '证书图', 'type' => 'gallery',
-                'return_format' => 'array', 'preview_size' => 'medium',
-            ]],
+            [['key' => 'f_certs_note', 'label' => '提示', 'type' => 'message', 'message' => '证书图片已移到 <a href="/wp-admin/edit.php?post_type=cert">资质证书</a> 菜单管理。']],
 
             [['key' => 'f_tab_cats', 'label' => '业务领域', 'type' => 'tab']],
             $txt2('cats_title', '区块标题'),
-            [[
-                'key' => 'f_cats', 'name' => 'cats', 'label' => '卡片', 'type' => 'repeater',
-                'min' => 1, 'max' => 6, 'layout' => 'block', 'button_label' => '添加卡片',
-                'sub_fields' => [
-                    ['key' => 'f_cat_image', 'name' => 'image', 'label' => '图', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail'],
-                    ['key' => 'f_cat_title_zh', 'name' => 'title_zh', 'label' => '标题 (中)', 'type' => 'text'],
-                    ['key' => 'f_cat_title_jp', 'name' => 'title_jp', 'label' => '标题 (日)', 'type' => 'text'],
-                    ['key' => 'f_cat_desc_zh', 'name' => 'desc_zh', 'label' => '描述 (中)', 'type' => 'textarea', 'rows' => 2, 'new_lines' => 'br'],
-                    ['key' => 'f_cat_desc_jp', 'name' => 'desc_jp', 'label' => '描述 (日)', 'type' => 'textarea', 'rows' => 2, 'new_lines' => 'br'],
-                    ['key' => 'f_cat_url', 'name' => 'url', 'label' => '链接', 'type' => 'text'],
-                ],
-            ]],
+            [['key' => 'f_cats_note', 'label' => '提示', 'type' => 'message', 'message' => '卡片已移到 <a href="/wp-admin/edit.php?post_type=biz_card">业务卡片</a> 菜单管理。']],
 
             [['key' => 'f_tab_belief', 'label' => '品质宣言', 'type' => 'tab']],
             $txt2('belief_title', '标题'),
@@ -78,15 +64,7 @@ add_action('acf/init', function () {
 
             [['key' => 'f_tab_factory', 'label' => '工厂实景', 'type' => 'tab']],
             $txt2('factory_title', '区块标题'),
-            [[
-                'key' => 'f_factory', 'name' => 'factory', 'label' => '照片', 'type' => 'repeater',
-                'min' => 0, 'max' => 6, 'layout' => 'table', 'button_label' => '添加照片',
-                'sub_fields' => [
-                    ['key' => 'f_factory_image', 'name' => 'image', 'label' => '图', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail'],
-                    ['key' => 'f_factory_cap_zh', 'name' => 'caption_zh', 'label' => '说明 (中)', 'type' => 'text'],
-                    ['key' => 'f_factory_cap_jp', 'name' => 'caption_jp', 'label' => '说明 (日)', 'type' => 'text'],
-                ],
-            ]],
+            [['key' => 'f_factory_note', 'label' => '提示', 'type' => 'message', 'message' => '照片已移到 <a href="/wp-admin/edit.php?post_type=factory_photo">工厂照片</a> 菜单管理。']],
 
             [['key' => 'f_tab_news', 'label' => '新闻区块', 'type' => 'tab']],
             $txt2('news_title', '区块标题'),
@@ -110,24 +88,10 @@ add_action('acf/init', function () {
             $wys2('about_intro_body', '正文'),
 
             [['key' => 'f_tab_about_features', 'label' => '服务/经营', 'type' => 'tab']],
-            $txt2('feature1_title', '左卡标题'),
-            [[
-                'key' => 'f_feature1_items', 'name' => 'feature1_items', 'label' => '左卡条目', 'type' => 'repeater',
-                'layout' => 'table', 'button_label' => '加一条',
-                'sub_fields' => [
-                    ['key' => 'f_f1_zh', 'name' => 'text_zh', 'label' => '中文', 'type' => 'text'],
-                    ['key' => 'f_f1_jp', 'name' => 'text_jp', 'label' => '日本語', 'type' => 'text'],
-                ],
-            ]],
-            $txt2('feature2_title', '右卡标题'),
-            [[
-                'key' => 'f_feature2_items', 'name' => 'feature2_items', 'label' => '右卡条目', 'type' => 'repeater',
-                'layout' => 'table', 'button_label' => '加一条',
-                'sub_fields' => [
-                    ['key' => 'f_f2_zh', 'name' => 'text_zh', 'label' => '中文', 'type' => 'text'],
-                    ['key' => 'f_f2_jp', 'name' => 'text_jp', 'label' => '日本語', 'type' => 'text'],
-                ],
-            ]],
+            $txt2('feature1_title', '左卡标题 (服务领域)'),
+            [['key' => 'f_f1_note', 'label' => '提示', 'type' => 'message', 'message' => '条目已移到 <a href="/wp-admin/edit.php?post_type=service">服务领域</a> 菜单管理。']],
+            $txt2('feature2_title', '右卡标题 (经营方针)'),
+            [['key' => 'f_f2_note', 'label' => '提示', 'type' => 'message', 'message' => '条目已移到 <a href="/wp-admin/edit.php?post_type=principle">经营方针</a> 菜单管理。']],
 
             [['key' => 'f_tab_about_partner', 'label' => '合作企业', 'type' => 'tab']],
             $img('partner_image', '配图'),
@@ -165,6 +129,58 @@ add_action('acf/init', function () {
         'fields'   => array_merge(
             [['key' => 'f_equip_title_jp', 'name' => 'equip_title_jp', 'label' => '设备标题 (日本語)', 'type' => 'text']]
         ),
+    ]);
+
+    /* ===================== BIZ CARD (首页业务卡片) ===================== */
+    acf_add_local_field_group([
+        'key'      => 'group_biz_card',
+        'title'    => '业务卡片信息 (双语)',
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'biz_card']]],
+        'fields'   => array_merge(
+            [['key' => 'f_biz_title_jp', 'name' => 'title_jp', 'label' => '标题 (日本語)', 'type' => 'text']],
+            $area2('biz_desc', '描述'),
+            [['key' => 'f_biz_url', 'name' => 'biz_url', 'label' => '点击跳转链接 (例如 /jieshao/)', 'type' => 'text']]
+        ),
+    ]);
+
+    /* ===================== FACTORY PHOTO ===================== */
+    acf_add_local_field_group([
+        'key'      => 'group_factory_photo',
+        'title'    => '工厂照片信息 (双语)',
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'factory_photo']]],
+        'fields'   => array_merge(
+            [['key' => 'f_fp_caption_jp', 'name' => 'caption_jp', 'label' => '说明 (日本語)', 'type' => 'text']]
+        ),
+    ]);
+
+    /* ===================== CERT (资质证书) ===================== */
+    acf_add_local_field_group([
+        'key'      => 'group_cert',
+        'title'    => '证书 (仅缩略图)',
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'cert']]],
+        'fields'   => [
+            ['key' => 'f_cert_note', 'label' => '提示', 'type' => 'message', 'message' => '设置右侧"特色图片"为证书图即可。标题用于后台辨识，前台不显示。'],
+        ],
+    ]);
+
+    /* ===================== SERVICE (服务领域 — 单行文字) ===================== */
+    acf_add_local_field_group([
+        'key'      => 'group_service',
+        'title'    => '服务领域 (双语)',
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'service']]],
+        'fields'   => [
+            ['key' => 'f_service_jp', 'name' => 'text_jp', 'label' => '日本語', 'type' => 'text'],
+        ],
+    ]);
+
+    /* ===================== PRINCIPLE (经营方针) ===================== */
+    acf_add_local_field_group([
+        'key'      => 'group_principle',
+        'title'    => '经营方针 (双语)',
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'principle']]],
+        'fields'   => [
+            ['key' => 'f_principle_jp', 'name' => 'text_jp', 'label' => '日本語', 'type' => 'text'],
+        ],
     ]);
 
     /* ===================== CONTACT (lianxi) ===================== */

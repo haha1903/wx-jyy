@@ -31,33 +31,33 @@ $page_id = get_the_ID() ?: get_page_by_path('jieshao')->ID ?? 0;
     </section>
     <?php endif; ?>
 
-    <!-- Features -->
+    <!-- Features (CPT: service + principle) -->
     <?php
-    $f1_items = (array) get_post_meta($page_id, 'feature1_items', true);
-    $f2_items = (array) get_post_meta($page_id, 'feature2_items', true);
-    if ($f1_items || $f2_items || wx_field('feature1_title', $page_id) || wx_field('feature2_title', $page_id)): ?>
+    $svc_q = new WP_Query(['post_type'=>'service',   'posts_per_page'=>-1,'orderby'=>'menu_order date','order'=>'ASC']);
+    $prn_q = new WP_Query(['post_type'=>'principle', 'posts_per_page'=>-1,'orderby'=>'menu_order date','order'=>'ASC']);
+    if ($svc_q->have_posts() || $prn_q->have_posts()): ?>
     <section class="about-block alt">
         <div class="inner two-col">
             <div class="feature-card">
                 <h3><?= esc_html(wx_field('feature1_title', $page_id)) ?></h3>
                 <ul>
-                <?php foreach ($f1_items as $row):
-                    $t = $jp ? ($row['text_jp'] ?? '') : ($row['text_zh'] ?? '');
-                    if (!$t && $jp) $t = $row['text_zh'] ?? '';
+                <?php while ($svc_q->have_posts()): $svc_q->the_post();
+                    $tjp = get_field('text_jp');
+                    $t = $jp && $tjp ? $tjp : get_the_title();
                 ?>
                     <li><?= esc_html($t) ?></li>
-                <?php endforeach; ?>
+                <?php endwhile; wp_reset_postdata(); ?>
                 </ul>
             </div>
             <div class="feature-card">
                 <h3><?= esc_html(wx_field('feature2_title', $page_id)) ?></h3>
                 <ul>
-                <?php foreach ($f2_items as $row):
-                    $t = $jp ? ($row['text_jp'] ?? '') : ($row['text_zh'] ?? '');
-                    if (!$t && $jp) $t = $row['text_zh'] ?? '';
+                <?php while ($prn_q->have_posts()): $prn_q->the_post();
+                    $tjp = get_field('text_jp');
+                    $t = $jp && $tjp ? $tjp : get_the_title();
                 ?>
                     <li><?= esc_html($t) ?></li>
-                <?php endforeach; ?>
+                <?php endwhile; wp_reset_postdata(); ?>
                 </ul>
             </div>
         </div>

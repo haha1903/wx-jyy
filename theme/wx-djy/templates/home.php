@@ -35,43 +35,44 @@ $belief_cta_url = get_field('belief_cta_url', $page_id) ?: '/jieshao/';
         </div>
     </section>
 
-    <!-- Certifications -->
-    <?php $certs = get_field('certs', $page_id); if ($certs): ?>
+    <!-- Certifications (CPT: cert) -->
+    <?php $cert_q = new WP_Query(['post_type'=>'cert','posts_per_page'=>-1,'orderby'=>'menu_order date','order'=>'ASC']);
+    if ($cert_q->have_posts()): ?>
     <section class="section compact">
         <h3><?= esc_html(wx_field('certs_title', $page_id)) ?></h3>
         <div class="certs">
-            <?php foreach ((array) $certs as $c):
-                $url = is_array($c) ? ($c['url'] ?? '') : (is_numeric($c) ? wp_get_attachment_url((int)$c) : (string)$c);
+            <?php while ($cert_q->have_posts()): $cert_q->the_post();
+                $url = get_the_post_thumbnail_url(get_the_ID(), 'large');
                 if (!$url) continue;
             ?>
-                <img src="<?= esc_url($url) ?>" alt="">
-            <?php endforeach; ?>
+                <img src="<?= esc_url($url) ?>" alt="<?= esc_attr(get_the_title()) ?>">
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </section>
     <?php endif; ?>
 
-    <!-- Business categories -->
-    <?php $cats = (array) get_post_meta($page_id, 'cats', true); if ($cats): ?>
+    <!-- Business categories (CPT: biz_card) -->
+    <?php $cat_q = new WP_Query(['post_type'=>'biz_card','posts_per_page'=>-1,'orderby'=>'menu_order date','order'=>'ASC']);
+    if ($cat_q->have_posts()): ?>
     <section class="section">
         <h3><?= esc_html(wx_field('cats_title', $page_id)) ?></h3>
         <div class="cat-grid">
-            <?php foreach ($cats as $row):
-                $url   = wx_img_url($row['image'] ?? '');
-                $title = $jp ? ($row['title_jp'] ?? '') : ($row['title_zh'] ?? '');
-                $desc  = $jp ? ($row['desc_jp'] ?? '')  : ($row['desc_zh'] ?? '');
-                if (!$title && $jp) $title = $row['title_zh'] ?? '';
-                if (!$desc  && $jp) $desc  = $row['desc_zh'] ?? '';
-                $href  = $row['url'] ?? '/';
+            <?php while ($cat_q->have_posts()): $cat_q->the_post();
+                $img   = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+                $title_jp = get_field('title_jp');
+                $title = $jp && $title_jp ? $title_jp : get_the_title();
+                $desc  = wx_field('biz_desc');
+                $href  = get_field('biz_url') ?: '/';
             ?>
                 <a class="cat-card" href="<?= esc_url(home_url($href)) ?>">
-                    <?php if ($url): ?><div class="ph"><img src="<?= esc_url($url) ?>" alt=""></div><?php endif; ?>
+                    <?php if ($img): ?><div class="ph"><img src="<?= esc_url($img) ?>" alt=""></div><?php endif; ?>
                     <div class="body">
                         <h4><?= esc_html($title) ?></h4>
                         <p><?= wp_kses_post($desc) ?></p>
                         <span class="more"><?= $jp ? '詳しく →' : '了解更多 →' ?></span>
                     </div>
                 </a>
-            <?php endforeach; ?>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </section>
     <?php endif; ?>
@@ -93,21 +94,22 @@ $belief_cta_url = get_field('belief_cta_url', $page_id) ?: '/jieshao/';
     </section>
     <?php endif; ?>
 
-    <!-- Factory showcase -->
-    <?php $factory = (array) get_post_meta($page_id, 'factory', true); if ($factory): ?>
+    <!-- Factory showcase (CPT: factory_photo) -->
+    <?php $fp_q = new WP_Query(['post_type'=>'factory_photo','posts_per_page'=>-1,'orderby'=>'menu_order date','order'=>'ASC']);
+    if ($fp_q->have_posts()): ?>
     <section class="section compact">
         <h3><?= esc_html(wx_field('factory_title', $page_id)) ?></h3>
         <div class="factory-grid">
-            <?php foreach ($factory as $row):
-                $url = wx_img_url($row['image'] ?? '');
-                $cap = $jp ? ($row['caption_jp'] ?? '') : ($row['caption_zh'] ?? '');
-                if (!$cap && $jp) $cap = $row['caption_zh'] ?? '';
+            <?php while ($fp_q->have_posts()): $fp_q->the_post();
+                $url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+                $cap_jp = get_field('caption_jp');
+                $cap = $jp && $cap_jp ? $cap_jp : get_the_title();
             ?>
                 <figure>
                     <?php if ($url): ?><img src="<?= esc_url($url) ?>" alt=""><?php endif; ?>
                     <?php if ($cap): ?><figcaption><?= esc_html($cap) ?></figcaption><?php endif; ?>
                 </figure>
-            <?php endforeach; ?>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </section>
     <?php endif; ?>
