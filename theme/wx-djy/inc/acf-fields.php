@@ -191,6 +191,9 @@ add_action('acf/init', function () {
         'fields'   => [
             ['key' => 'f_contact_intro_zh', 'name' => 'contact_intro_zh', 'label' => '页眉 (中文)', 'type' => 'text', 'default_value' => '公司概要'],
             ['key' => 'f_contact_intro_jp', 'name' => 'contact_intro_jp', 'label' => '页眉 (日本語)', 'type' => 'text', 'default_value' => 'お問い合わせ'],
+            ['key' => 'f_contact_form_title_zh', 'name' => 'contact_form_title_zh', 'label' => '在线留言标题 (中文)', 'type' => 'text', 'default_value' => '在线留言'],
+            ['key' => 'f_contact_form_title_jp', 'name' => 'contact_form_title_jp', 'label' => '在线留言标题 (日本語)', 'type' => 'text', 'default_value' => 'お問い合わせフォーム'],
+            ['key' => 'f_contact_form_id', 'name' => 'contact_form_id', 'label' => 'Forminator 表单 ID', 'type' => 'number', 'instructions' => '在 Forminator → Forms 列表里复制表单 ID 填入；留空则不显示表单。'],
         ],
     ]);
 

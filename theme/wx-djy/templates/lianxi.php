@@ -55,4 +55,16 @@ $jp_label = wx_field('jp_label', wx_options_pid());
         </table>
     </div>
 
+    <?php
+    $form_id = (int) wx_field('contact_form_id', $page_id);
+    if ($form_id && shortcode_exists('forminator_form')):
+        $form_title = wx_field('contact_form_title', $page_id) ?: ($jp ? 'お問い合わせフォーム' : '在线留言');
+    ?>
+        <div id="contact-form-wrap" style="max-width:760px;margin:40px auto 0;padding:0 20px;">
+            <h3 style="text-align:center;margin-bottom:20px;"><?= esc_html($form_title) ?></h3>
+            <?= do_shortcode('[forminator_form id="' . $form_id . '"]') ?>
+        </div>
+    <?php endif; ?>
+</div>
+
 <?php get_footer(); ?>
