@@ -174,8 +174,8 @@ body:not(.home) #contents1 > h3{text-align:left;font-size:24px;font-weight:500;b
 .news-item .txt{font-size:15px;line-height:1.65;color:var(--text);margin:0}
 
 /* Certifications row */
-.certs{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;justify-items:center}
-.certs img{max-width:100%;width:auto;height:auto;max-height:520px}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;justify-items:stretch}
+.certs img{width:100%;height:auto;display:block}
 
 /* Contact bar */
 .contact-bar{
