@@ -1,7 +1,7 @@
 /*
 Theme Name: WX-JYY Legacy
-Description: 无锡佳与阳精密机械有限公司 — 复刻 2011 年原站视觉，由 WordPress 驱动。
-Version: 2.0
+Description: 无锡佳与阳精密机械有限公司
+Version: 3.0
 Author: changhai
 */
 
@@ -11,156 +11,224 @@ html,body{margin:0;padding:0}
 img{max-width:100%;height:auto;border:0;display:block}
 ul{margin:0;padding:0;list-style:none}
 table{border-collapse:collapse;border-spacing:0}
-a{color:#1f8cd6;text-decoration:none}
+a{color:#1f8cd6;text-decoration:none;transition:color .15s}
 a:hover{color:#3aa8e8;text-decoration:underline}
 
-body{
-  font:14px/1.6 "PingFang SC","Microsoft YaHei","Hiragino Sans GB","Yu Gothic",sans-serif;
-  color:#333;background:#f5f7fa;
+:root{
+  --c-brand:#1f8cd6;
+  --c-brand-d:#1772b0;
+  --c-brand-l:#3aa8e8;
+  --c-text:#2c3742;
+  --c-muted:#6b7785;
+  --c-line:#e4e8ed;
+  --c-bg:#f5f7fa;
+  --c-soft:#f3f8fc;
+  --shadow:0 2px 8px rgba(31,140,214,.08);
+  --shadow-h:0 6px 20px rgba(31,140,214,.16);
 }
 
-.contentBody{max-width:1080px;margin:0 auto;background:#fff;box-shadow:0 0 24px rgba(0,0,0,.04);min-height:100vh}
+body{
+  font:14px/1.65 "PingFang SC","Microsoft YaHei","Hiragino Sans GB","Yu Gothic",sans-serif;
+  color:var(--c-text);background:var(--c-bg);
+}
+
+.contentBody{max-width:1100px;margin:0 auto;background:#fff;box-shadow:0 0 32px rgba(0,0,0,.05);min-height:100vh}
 
 /* ---------- header ---------- */
 #header{
   display:flex;align-items:center;justify-content:space-between;
-  padding:18px 24px;border-bottom:1px solid #eee;
+  padding:20px 28px;border-bottom:1px solid var(--c-line);
 }
-#header h1{margin:0;font-size:22px;color:#1f8cd6;letter-spacing:1px}
-#header h1 a{display:inline-block;color:inherit}
+#header h1{margin:0;font-size:20px;font-weight:600;color:var(--c-brand);letter-spacing:1px;display:flex;align-items:center;gap:10px}
+#header h1::before{
+  content:"";display:inline-block;width:34px;height:34px;
+  background:linear-gradient(135deg,var(--c-brand),var(--c-brand-l));
+  border-radius:8px;position:relative;flex:0 0 34px;
+}
+#header h1 a{color:inherit;display:inline-block}
 #header h1 a::before{content:"无锡佳与阳精密机械有限公司"}
 #header h1.jp a::before{content:"無錫佳&陽精密機械有限会社"}
-#header ul{display:flex;gap:12px}
+#header ul{display:flex;gap:10px}
 #header li a{
-  display:inline-block;padding:6px 12px;border:1px solid #1f8cd6;border-radius:4px;
-  color:#1f8cd6;font-size:13px;
+  display:inline-block;padding:7px 14px;border:1px solid var(--c-brand);
+  border-radius:20px;color:var(--c-brand);font-size:13px;
 }
-#header li a:hover{background:#1f8cd6;color:#fff;text-decoration:none}
+#header li a:hover{background:var(--c-brand);color:#fff;text-decoration:none}
 
 /* ---------- nav ---------- */
-#navi{background:#1f8cd6}
-#navi ul{display:flex}
-#navi li{flex:1;border-right:1px solid rgba(255,255,255,.2)}
-#navi li:last-child{border-right:0}
+#navi{background:var(--c-brand);box-shadow:var(--shadow)}
+#navi ul{display:flex;max-width:1100px;margin:0 auto}
+#navi li{flex:1;position:relative}
+#navi li+li::before{content:"";position:absolute;left:0;top:25%;bottom:25%;width:1px;background:rgba(255,255,255,.18)}
 #navi li a{
-  display:block;text-align:center;padding:14px 8px;color:#fff;font-size:15px;font-weight:500;
-  transition:background .15s;
+  display:block;text-align:center;padding:15px 8px;color:#fff;font-size:15px;font-weight:500;
+  transition:background .2s;
 }
-#navi li a:hover{background:#3aa8e8;text-decoration:none}
-#navi li.home a{background:rgba(0,0,0,.08)}
+#navi li a:hover{background:rgba(255,255,255,.1);text-decoration:none}
+#navi li.home a{background:rgba(0,0,0,.12)}
 
-#pan{padding:10px 24px;font-size:13px;color:#666;background:#fafbfc;border-bottom:1px solid #eee}
+#pan{padding:11px 28px;font-size:13px;color:var(--c-muted);background:var(--c-soft);border-bottom:1px solid var(--c-line)}
 #pan li{display:inline}
-.topLink{padding:10px 24px 0;text-align:right;font-size:12px}
+#pan li a{color:var(--c-muted)}
+.topLink{display:none}
 
 /* ---------- content ---------- */
-#contents1{padding:24px}
+#contents1{padding:28px}
 #contents1 h2{
-  margin:0 0 18px;font-size:22px;color:#1f8cd6;font-weight:600;
-  padding-bottom:8px;border-bottom:2px solid #1f8cd6;
+  margin:0 0 22px;font-size:22px;color:var(--c-brand);font-weight:600;
+  padding:0 0 10px;position:relative;
 }
+#contents1 h2::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:3px;background:var(--c-brand);border-radius:3px}
 #contents1 h3{
-  margin:24px 0 12px;padding:8px 14px;background:#1f8cd6;color:#fff;
-  font-size:16px;font-weight:500;border-radius:3px;
+  margin:32px 0 18px;padding:0 0 8px;font-size:18px;color:var(--c-text);font-weight:600;
+  border-bottom:2px solid var(--c-line);position:relative;background:none;
 }
-#contents1 h5{margin:18px 0 6px;font-size:15px;color:#1f8cd6;font-weight:600}
-#contents1 p{margin:0 0 12px}
+#contents1 h3::before{content:"";display:inline-block;width:4px;height:18px;background:var(--c-brand);margin-right:10px;vertical-align:-3px;border-radius:2px}
+#contents1 h5{margin:20px 0 8px;font-size:15px;color:var(--c-brand);font-weight:600}
+#contents1 p{margin:0 0 12px;color:var(--c-text)}
 
-/* home banner */
-.infos{
-  margin:0 0 18px;border-radius:6px;overflow:hidden;background:#000;
-  height:340px;position:relative;
+/* ============ HOME PAGE ============ */
+
+/* Hero — replaces old infos carousel entirely */
+.hero{
+  margin:-28px -28px 24px;padding:64px 40px;
+  background:linear-gradient(135deg,#1f8cd6 0%,#3aa8e8 50%,#56c2f4 100%);
+  color:#fff;text-align:center;position:relative;overflow:hidden;
 }
-.infoBox{position:relative}
-.info{height:340px;display:flex;align-items:center;justify-content:center;background:#000}
-.info img{max-height:340px;width:auto}
-.icons{position:absolute;right:14px;bottom:14px;display:flex;gap:6px;z-index:2}
-.icons .icon{
-  width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.5);
-  text-align:center;line-height:22px;font-size:12px;color:#333;cursor:pointer;
+.hero::before,.hero::after{
+  content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08);
 }
-.icons .icon.on{background:#1f8cd6;color:#fff}
+.hero::before{width:300px;height:300px;top:-100px;right:-50px}
+.hero::after{width:200px;height:200px;bottom:-80px;left:-30px}
+.hero h2{color:#fff;font-size:34px;margin:0 0 14px;font-weight:700;padding:0;border:0;letter-spacing:2px;position:relative}
+.hero h2::after{display:none}
+.hero p{font-size:17px;opacity:.95;margin:0 0 24px;position:relative}
+.hero .badges{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:14px;position:relative;margin-top:8px}
+.hero .badges span{display:inline-flex;align-items:center;gap:6px;opacity:.9}
+.hero .badges span::before{content:"✦";color:#fffd}
 
-/* home boxes */
-.boxLeft,.boxRight,.boxRight_jp,.boxFull{box-sizing:border-box}
-.boxLeft{float:left;width:66%;padding-right:18px}
-.boxRight,.boxRight_jp{float:right;width:34%}
-.boxFull{width:100%;float:none;padding:0}
-.boxLeft::after,#contents1::after{content:"";display:block;clear:both}
+/* Three business cards */
+.bizgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 0 36px}
+.bizcard{
+  background:#fff;border:1px solid var(--c-line);border-radius:10px;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow);
+}
+.bizcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.bizcard .ph{height:130px;background:var(--c-soft);display:flex;align-items:center;justify-content:center;color:var(--c-brand);font-size:38px}
+.bizcard .ph img{max-height:100%;width:100%;object-fit:cover}
+.bizcard .body{padding:16px 18px}
+.bizcard h4{margin:0 0 6px;color:var(--c-brand);font-size:16px;font-weight:600}
+.bizcard p{margin:0;color:var(--c-muted);font-size:13px;line-height:1.55}
 
-.homeTitle{
-  margin:18px 0 10px;padding-left:10px;border-left:4px solid #1f8cd6;
-  font-size:16px;font-weight:600;color:#1f8cd6;line-height:1.2;
+/* Certifications row */
+.certs{
+  display:flex;gap:18px;justify-content:center;align-items:center;
+  padding:24px;background:var(--c-soft);border-radius:10px;margin:0 0 36px;
+}
+.certs img{max-height:180px;width:auto;border:1px solid var(--c-line);background:#fff;padding:6px;border-radius:6px;box-shadow:var(--shadow)}
+
+/* News + contact column layout */
+.homerow{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;margin:24px 0 0}
+.homerow h3{margin-top:0}
+
+.newslist li{
+  padding:14px 16px;border:1px solid var(--c-line);border-radius:8px;margin-bottom:10px;
+  background:#fff;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s,box-shadow .2s;
+}
+.newslist li:hover{border-color:var(--c-brand);box-shadow:var(--shadow)}
+.newslist .date{
+  flex:0 0 64px;text-align:center;padding:8px 6px;background:var(--c-soft);border-radius:6px;
+  color:var(--c-brand);
+}
+.newslist .date .y{display:block;font-size:11px;line-height:1.2}
+.newslist .date .m{display:block;font-size:18px;font-weight:700;line-height:1.2}
+.newslist .txt{flex:1;font-size:13.5px;color:var(--c-text);line-height:1.6}
+
+/* Contact card */
+.contactcard{
+  background:linear-gradient(160deg,#1f8cd6,#1772b0);color:#fff;border-radius:10px;
+  padding:22px;box-shadow:var(--shadow);
+}
+.contactcard h4{margin:0 0 10px;font-size:15px;font-weight:600;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2)}
+.contactcard .row{font-size:13.5px;line-height:1.9;margin:0 0 6px}
+.contactcard .row b{display:inline-block;width:60px;opacity:.8;font-weight:400}
+.contactcard .reg{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
+
+/* ============ JIESHAO PAGE ============ */
+.jieshao{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:start;margin:24px 0;padding:20px;background:var(--c-soft);border-radius:10px}
+.jieshaoLeft img{border-radius:8px;border:1px solid var(--c-line);box-shadow:var(--shadow);width:100%}
+.jieshaoRight .homeTitle{
+  margin:0 0 12px;padding:0 0 8px;font-size:17px;font-weight:600;
+  color:var(--c-brand);border-bottom:2px solid var(--c-brand);display:inline-block;
+}
+.jieshaoRight ul li{padding:8px 0 8px 22px;border-bottom:1px dashed var(--c-line);position:relative}
+.jieshaoRight ul li:last-child{border-bottom:0}
+.jieshaoRight ul li::before{
+  content:"";position:absolute;left:0;top:14px;width:8px;height:8px;
+  border:2px solid var(--c-brand);border-radius:50%;
 }
 
-.boxLeft ul li{
-  padding:10px 0;border-bottom:1px dashed #e3e8ed;
-  display:flex;align-items:flex-start;gap:8px;
-}
-.boxLeft ul li img{margin-top:6px;width:14px;height:auto;flex:0 0 14px}
+.box{padding:8px 0 16px}
+.box .left{display:block;margin-bottom:14px}
+.box .right{display:block;text-align:center}
+.box .right img{display:inline-block;border-radius:8px;border:1px solid var(--c-line);max-width:60%}
 
-.boxRight .btn,.boxRight_jp .btn{
-  width:100%;background:#f3f8fc;border:1px solid #d6e8f4;border-radius:6px;
-  padding:16px;font-size:13px;color:#333;
-}
-.boxRight .btn td,.boxRight_jp .btn td{padding:4px 6px;vertical-align:top}
-.boxRight .btn td[colspan="2"],.boxRight_jp .btn td[colspan="2"]{
-  font-weight:600;color:#1f8cd6;padding-top:10px;border-top:1px solid #d6e8f4;
-}
-.boxRight .btn tr:first-child td[colspan="2"],
-.boxRight_jp .btn tr:first-child td[colspan="2"]{border-top:0;padding-top:0}
-
-.boxFull img{display:inline-block;width:48%;margin:0 1% 12px;vertical-align:top;border:1px solid #eee;border-radius:4px}
-
-/* jieshao columns */
-.jieshao{display:flex;gap:18px;align-items:flex-start;margin:18px 0}
-.jieshaoLeft{flex:0 0 38%}
-.jieshaoLeft img{border-radius:6px;border:1px solid #eee}
-.jieshaoRight{flex:1}
-.jieshaoRight ul li{padding:6px 0;border-bottom:1px dashed #e3e8ed}
-.jieshaoRight ul li::before{content:"▸ ";color:#1f8cd6;font-weight:bold}
-
-.box{padding:0 0 14px}
-.box .left{width:60%;display:inline-block;vertical-align:top}
-.box .right{width:38%;display:inline-block;vertical-align:top;text-align:right}
-.box .right img{display:inline-block;border-radius:6px;border:1px solid #eee}
-
-/* chanpin grid */
+/* ============ CHANPIN PAGE ============ */
+/* Force a stable 3-col grid regardless of legacy markup variance */
 #contents1 ul li{margin:0}
-.desc_jp{display:inline-block;vertical-align:top;width:32%;margin:0 .5% 12px;text-align:center}
-.desc_jp img{border:1px solid #eee;border-radius:4px;margin:0 auto}
+.desc_jp{
+  display:inline-block;vertical-align:top;width:calc(33.333% - 12px);margin:0 6px 16px;text-align:center;
+}
+.desc_jp img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  border:1px solid var(--c-line);border-radius:8px;background:var(--c-soft);
+  box-shadow:var(--shadow);transition:transform .2s;
+}
+.desc_jp img:hover{transform:scale(1.02)}
 
-/* shebei (desc + img inline) */
+/* ============ SHEBEI PAGE ============ */
 .desc,.img{
-  display:inline-block;vertical-align:top;width:48%;margin:0 .5% 18px;
-  text-align:center;font-size:13px;color:#555;
+  display:inline-block;vertical-align:top;width:calc(50% - 12px);margin:0 5px 24px;
+  text-align:center;font-size:13px;color:var(--c-muted);font-weight:500;
 }
-.desc img,.img img{margin:8px auto 0;border:1px solid #eee;border-radius:4px}
+.desc img,.img img{
+  margin:10px auto 0;border:1px solid var(--c-line);border-radius:8px;width:100%;
+  aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow);
+}
 
-/* lianxi 公司概要 table */
-#right table{width:100%;margin:8px 0}
-#right th,#right td{
-  padding:12px 14px;border:1px solid #e3e8ed;text-align:left;vertical-align:top;
-}
-#right th{background:#f3f8fc;color:#1f8cd6;font-weight:600;width:30%}
+/* ============ LIANXI PAGE ============ */
+#right{margin-top:8px}
+#right table{width:100%;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+#right th,#right td{padding:14px 18px;border-bottom:1px solid var(--c-line);text-align:left;vertical-align:top}
+#right tr:last-child th,#right tr:last-child td{border-bottom:0}
+#right th{background:var(--c-soft);color:var(--c-brand);font-weight:600;width:25%}
+#right td img{margin:10px 0;border-radius:8px;border:1px solid var(--c-line);max-width:80%}
+#right td strong{color:var(--c-brand);font-size:14px;display:inline-block;margin:4px 0}
 
 /* ---------- footer ---------- */
 #footer{
-  background:#1f8cd6;color:#fff;text-align:center;padding:20px;margin-top:32px;
-  border-top:4px solid #1772b0;
+  background:linear-gradient(180deg,#1f8cd6,#1772b0);color:#fff;text-align:center;
+  padding:28px 20px;margin-top:48px;
 }
-#footer p{margin:4px 0;font-size:12px}
-#footer .beian,#footer a{color:#fff;text-decoration:underline}
+#footer p{margin:4px 0;font-size:12.5px;opacity:.95}
+#footer .beian,#footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+#footer .beian:hover,#footer a:hover{border-color:#fff}
 
 /* ---------- responsive ---------- */
-@media (max-width:720px){
-  #header{flex-direction:column;gap:10px;text-align:center}
+@media (max-width:860px){
+  #header{flex-direction:column;gap:12px;text-align:center}
   #navi ul{flex-wrap:wrap}
-  #navi li{flex:0 0 33.33%;border-bottom:1px solid rgba(255,255,255,.2)}
-  .boxLeft,.boxRight,.boxRight_jp{float:none;width:100%;padding:0}
-  .jieshao{flex-direction:column}
-  .jieshaoLeft{flex:0 0 auto}
-  .boxFull img,.desc,.img,.box .left,.box .right{width:100%;display:block;margin:0 0 14px}
-  .desc_jp{width:48%}
-  .info img{max-width:100%;max-height:300px}
+  #navi li{flex:0 0 33.33%}
+  #navi li+li::before{display:none}
+  .hero{padding:42px 22px}
+  .hero h2{font-size:24px}
+  .hero p{font-size:15px}
+  .hero .badges{gap:14px;font-size:13px}
+  .bizgrid{grid-template-columns:1fr}
+  .homerow{grid-template-columns:1fr}
+  .certs{flex-direction:column}
+  .certs img{max-height:none;width:100%}
+  .jieshao{grid-template-columns:1fr;padding:14px}
+  .desc_jp{width:calc(50% - 8px);margin:0 4px 12px}
+  .desc,.img{width:100%;display:block;margin:0 0 18px}
 }
