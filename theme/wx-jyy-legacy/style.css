@@ -39,17 +39,11 @@ body{
   padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);
   position:sticky;top:0;z-index:50;
 }
-#header h1{margin:0;font-size:16px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:12px;letter-spacing:.5px}
-#header h1::before{
-  content:"";display:inline-block;width:34px;height:34px;flex:0 0 34px;
-  background:var(--hp-blue);border-radius:50%;
-  background-image:radial-gradient(circle at 35% 35%,#fff 0 4px,transparent 5px),
-                   radial-gradient(circle at 65% 35%,#fff 0 4px,transparent 5px),
-                   radial-gradient(circle at 50% 65%,#fff 0 4px,transparent 5px);
-}
-#header h1 a{color:inherit}
-#header h1 a::before{content:"无锡佳与阳精密机械"}
-#header h1.jp a::before{content:"無錫佳&陽精密機械"}
+#header h1{margin:0;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:.5px}
+#header h1 a{color:inherit;display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+#header h1 a:hover{opacity:1}
+.brand-logo{width:42px;height:42px;flex:0 0 42px;display:block}
+.brand-name{display:inline-block;line-height:1}
 #header ul{display:flex;gap:8px}
 #header li a{
   display:inline-block;padding:8px 16px;color:var(--ink);font-size:13px;font-weight:500;
@@ -184,28 +178,31 @@ body:not(.home) #contents1 > h3{text-align:left;font-size:24px;font-weight:500;b
 .contact-bar .row{font-size:14px;color:var(--text);line-height:2;margin:0}
 .contact-bar .row b{display:inline-block;width:80px;color:var(--muted);font-weight:400;font-size:13px}
 
-/* ============ JIESHAO ============ */
-.about-hero{padding:60px 40px 40px;max-width:1100px;margin:0 auto}
-.about-hero h2{font-size:42px;font-weight:300;margin-bottom:16px}
-.about-hero .lead{font-size:17px;color:var(--muted);max-width:780px;line-height:1.6}
-
-.about-cols{
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;
-  padding:48px 40px;max-width:1100px;margin:0 auto;align-items:start;
+/* ============ JIESHAO (about-page) ============ */
+body:not(.home) #contents1.about-page{padding:0;max-width:none}
+.about-page section{padding:64px 40px}
+.about-page .inner{max-width:1100px;margin:0 auto}
+.about-page .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--hp-blue);font-weight:600;margin-bottom:12px}
+.about-page h2{font-size:42px;font-weight:300;line-height:1.15;margin:0 0 18px;color:var(--ink)}
+.about-page h3{font-size:24px;font-weight:500;margin:0 0 18px;color:var(--ink);text-align:left;border:0;padding:0}
+.about-page .lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:780px;margin:0}
+.about-intro{padding-top:72px;padding-bottom:32px}
+.about-block.alt{background:var(--soft)}
+.two-col{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.two-col.reverse figure{order:2}
+.two-col figure{margin:0}
+.two-col figure img{width:100%;height:100%;border-radius:4px;border:1px solid var(--line);object-fit:cover;aspect-ratio:4/3}
+.feature-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px 32px}
+.feature-card ul li{padding:12px 0 12px 22px;border-bottom:1px solid var(--line);position:relative;font-size:15px;color:var(--text)}
+.feature-card ul li:last-child{border-bottom:0}
+.feature-card ul li::before{content:"";position:absolute;left:0;top:18px;width:10px;height:2px;background:var(--hp-blue)}
+@media (max-width:900px){
+  .about-page section{padding:40px 20px}
+  .about-page h2{font-size:28px}
+  .about-page h3{font-size:20px}
+  .two-col,.two-col.reverse{grid-template-columns:1fr;gap:24px}
+  .two-col.reverse figure{order:0}
 }
-.about-cols figure{margin:0}
-.about-cols img{width:100%;border-radius:4px;border:1px solid var(--line)}
-.about-cols h4{font-size:22px;font-weight:400;margin:0 0 16px;color:var(--ink)}
-.about-cols ul li{padding:12px 0 12px 24px;border-bottom:1px solid var(--line);position:relative;font-size:15px;color:var(--text)}
-.about-cols ul li::before{
-  content:"";position:absolute;left:0;top:18px;width:8px;height:2px;background:var(--hp-blue);
-}
-
-/* legacy compatibility for box / right / left blocks if any template uses them */
-.box{padding:8px 0 16px}
-.box .left{display:block;margin-bottom:14px}
-.box .right{display:block;text-align:center}
-.box .right img{display:inline-block;max-width:60%}
 
 /* ============ CHANPIN ============ */
 .product-section{padding:48px 40px;max-width:1400px;margin:0 auto}

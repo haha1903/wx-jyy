@@ -15,7 +15,12 @@
 <div class="contentBody">
 <a name="top"></a>
 <div id="header">
-    <h1<?php if (wx_is_jp()) echo ' class="jp"'; ?>><a href="<?php echo esc_url(home_url('/')); ?>"></a></h1>
+    <h1<?php if (wx_is_jp()) echo ' class="jp"'; ?>>
+        <a href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php echo esc_attr(wx_is_jp() ? '無錫諦佳揚科技有限会社' : '无锡谛佳扬科技有限公司'); ?>">
+            <img class="brand-logo" src="<?php echo esc_url(get_template_directory_uri() . '/image/logo.svg'); ?>" alt="">
+            <span class="brand-name"><?php echo wx_is_jp() ? '無錫諦佳揚科技有限会社' : '无锡谛佳扬科技有限公司'; ?></span>
+        </a>
+    </h1>
     <ul>
         <li><a href="<?php echo wx_switch_url(); ?>"><?php echo wx_is_jp() ? '中文版' : '日本語'; ?></a></li>
     </ul>

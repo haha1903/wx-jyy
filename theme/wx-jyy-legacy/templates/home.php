@@ -7,7 +7,7 @@ $jp = wx_is_jp();
 
 <div id="contents1">
 
-    <!-- Hero: dark photo background, big white title (HP style) -->
+    <!-- Hero -->
     <section class="hp-hero">
         <img src="<?= $t ?>/image/shebei/chejian.jpg" alt="">
         <div class="copy">
@@ -23,14 +23,23 @@ $jp = wx_is_jp();
         </div>
     </section>
 
-    <!-- Three category cards -->
+    <!-- Certifications (moved up: signals trust first) -->
+    <section class="section compact">
+        <h3><?= $jp ? '品質認証 ISO 9001' : '公司资质 ISO 9001' ?></h3>
+        <div class="certs">
+            <img src="<?= $t ?>/image/home/zizhi_e.jpg" alt="ISO 9001 EN">
+            <img src="<?= $t ?>/image/home/zizhi_c.jpg" alt="ISO 9001 CN">
+        </div>
+    </section>
+
+    <!-- Business categories -->
     <section class="section">
         <h3><?= $jp ? '事業領域' : '业务领域' ?></h3>
         <div class="cat-grid">
             <a class="cat-card" href="<?= esc_url(home_url('/jieshao/')) ?>">
                 <div class="ph"><img src="<?= $t ?>/image/jieshao/guanyu1.jpg" alt=""></div>
                 <div class="body">
-                    <h4><?= $jp ? '会社概要' : '关于佳与阳' ?></h4>
+                    <h4><?= $jp ? '会社概要' : '关于谛佳扬' ?></h4>
                     <p><?= $jp ? '日本企業と技術提携、樹脂切削加工をリードする企業。' : '与日本知名企业技术合作，专业工程塑料切削加工。' ?></p>
                     <span class="more"><?= $jp ? '詳しく →' : '了解更多 →' ?></span>
                 </div>
@@ -54,7 +63,7 @@ $jp = wx_is_jp();
         </div>
     </section>
 
-    <!-- Belief / brand statement (HP style: dark half + photo half) -->
+    <!-- Belief / brand statement -->
     <section class="belief">
         <div class="copy">
             <h3><?= $jp ? '品質第一、誠心誠意' : '品质第一，诚心诚意' ?></h3>
@@ -65,15 +74,6 @@ $jp = wx_is_jp();
             <a class="btn-cta" style="background:var(--hp-blue);border-color:var(--hp-blue);color:#fff" href="<?= esc_url(home_url('/jieshao/')) ?>"><?= $jp ? '会社案内' : '了解我们' ?></a>
         </div>
         <div class="photo"><img src="<?= $t ?>/image/shebei/shebei5.jpg" alt=""></div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="section compact">
-        <h3><?= $jp ? '品質認証 ISO 9001' : '公司资质 ISO 9001' ?></h3>
-        <div class="certs">
-            <img src="<?= $t ?>/image/home/zizhi_e.jpg" alt="ISO 9001 EN">
-            <img src="<?= $t ?>/image/home/zizhi_c.jpg" alt="ISO 9001 CN">
-        </div>
     </section>
 
     <!-- News -->
@@ -89,10 +89,10 @@ $jp = wx_is_jp();
             ];
         else:
             $news = [
-                ['2011 / 10','佳与阳与日本栉田工业（株）就来年针对半导体、液晶等制造装置用特殊树脂空气压阀门的开发研制达成共识。'],
-                ['2011 / 09','佳与阳携手日本栉田工业（株）精彩亮相"中日制造采购洽谈会 — 上海 2011 展会"，工程塑料切削加工产品获得极大关注。'],
-                ['2011 / 07','日本大和リテック（株）榊原社長考察佳与阳。双方就工程塑料切削加工工业前景与公司合作进行深入交流。'],
-                ['2011 / 03','佳与阳成立。日本栉田工业（株）及三菱重工空调系统（上海）有限公司等领导光临道贺。'],
+                ['2011 / 10','谛佳扬与日本栉田工业（株）就来年针对半导体、液晶等制造装置用特殊树脂空气压阀门的开发研制达成共识。'],
+                ['2011 / 09','谛佳扬携手日本栉田工业（株）精彩亮相"中日制造采购洽谈会 — 上海 2011 展会"，工程塑料切削加工产品获得极大关注。'],
+                ['2011 / 07','日本大和リテック（株）榊原社長考察谛佳扬。双方就工程塑料切削加工工业前景与公司合作进行深入交流。'],
+                ['2011 / 03','谛佳扬成立。日本栉田工业（株）及三菱重工空调系统（上海）有限公司等领导光临道贺。'],
             ];
         endif;
         foreach ($news as [$date,$txt]): ?>
@@ -114,8 +114,8 @@ $jp = wx_is_jp();
             <div class="row"><b>MOBILE</b>86-13771153090</div>
         </div>
         <div>
-            <h4><?= $jp ? '佳陽貿易' : '日本区' ?></h4>
-            <div class="row"><b><?= $jp ? '住所' : '地址' ?></b><?= $jp ? '愛知県名古屋市中村区八社2-164' : '愛知県名古屋市中村区八社2-164' ?></div>
+            <h4><?= $jp ? '諦佳揚貿易' : '日本区' ?></h4>
+            <div class="row"><b><?= $jp ? '住所' : '地址' ?></b>愛知県名古屋市中村区八社2-164</div>
             <?php if ($jp): ?>
                 <div class="row"><b>TEL/FAX</b>052-413-5519</div>
                 <div class="row"><b>携帯</b>090-1272-8880</div>

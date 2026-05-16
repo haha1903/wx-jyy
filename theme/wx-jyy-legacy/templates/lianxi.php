@@ -37,7 +37,7 @@ $jp = wx_is_jp();
     <div id="right">
         <h4></h4>
         <table align="center">
-            <tr><th class="s14a">公司名称</th><td class="s14a">无锡佳与阳精密机械有限公司</td></tr>
+            <tr><th class="s14a">公司名称</th><td class="s14a">无锡谛佳扬科技有限公司</td></tr>
             <tr><th class="s14a">总经理</th><td class="s14a">孟伟斌</td></tr>
             <tr><th class="s14a">海外部经理</th><td class="s14a">张婷</td></tr>
             <tr><th class="s14a">设立年月日</th><td class="s14a">2011年3月9日</td></tr>
