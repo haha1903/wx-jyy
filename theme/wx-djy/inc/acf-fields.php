@@ -231,6 +231,11 @@ add_action('acf/init', function () {
             [['key' => 'f_jp_tel', 'name' => 'jp_tel', 'type' => 'text', 'label' => 'TEL / FAX']],
             [['key' => 'f_jp_mobile', 'name' => 'jp_mobile', 'type' => 'text', 'label' => '携帯 / Mobile']],
 
+            [['key' => 'f_tab_baidu_map', 'label' => '百度地图', 'type' => 'tab']],
+            [['key' => 'f_baidu_ak', 'name' => 'baidu_map_ak', 'type' => 'text', 'label' => '百度地图 AK', 'instructions' => '在 https://lbsyun.baidu.com/ 申请。需要把 wx-jyy.changhai.me 和 wx-jyy.com 加入 Referer 白名单。']],
+            [['key' => 'f_baidu_lng', 'name' => 'baidu_map_lng', 'type' => 'text', 'label' => '经度 (longitude)', 'instructions' => '通过 https://api.map.baidu.com/lbsapi/getpoint/ 拾取，例如 120.350xxx']],
+            [['key' => 'f_baidu_lat', 'name' => 'baidu_map_lat', 'type' => 'text', 'label' => '纬度 (latitude)', 'instructions' => '例如 31.585xxx']],
+
             [['key' => 'f_tab_company_info', 'label' => '公司概要 (用于 lianxi 页)', 'type' => 'tab']],
             [['key' => 'f_ci_name_zh', 'name' => 'company_name_zh', 'type' => 'text', 'label' => '公司名称 (中)']],
             [['key' => 'f_ci_name_jp', 'name' => 'company_name_jp', 'type' => 'text', 'label' => '公司名称 (日)']],

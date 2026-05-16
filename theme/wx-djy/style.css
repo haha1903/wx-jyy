@@ -257,21 +257,55 @@ body:not(.home) #contents1.about-page{padding:0;max-width:none}
 #right td img{margin:12px 0;border-radius:4px;border:1px solid var(--line);max-width:100%}
 #right td strong{display:inline-block;margin:6px 0;color:var(--ink)}
 
-/* ---------- contact page two-column layout ---------- */
-.page-template-lianxi #contents1{max-width:1200px;margin:0 auto}
-.page-template-lianxi .contact-grid{display:grid;grid-template-columns:3fr 2fr;gap:40px;align-items:start;margin-top:24px}
-.page-template-lianxi .contact-grid > #right{max-width:none;margin:0;padding:0;grid-column:1}
-.page-template-lianxi #contact-form-wrap{grid-column:2;grid-row:1;max-width:none !important;margin:0 !important;padding:0 !important;clear:none !important;position:sticky;top:80px;align-self:start}
-.page-template-lianxi #contact-form-wrap h3{text-align:left !important;margin:0 0 16px !important;font-size:24px;font-weight:500;border:0 !important;padding:0 !important}
-.page-template-lianxi .forminator-row{margin-bottom:12px}
-.page-template-lianxi .forminator-input,
-.page-template-lianxi .forminator-textarea{background:#fff !important;border:1px solid var(--line) !important}
-/* hide the original h3 (公司概要) on contact page since grid splits headers per column */
-.page-template-lianxi #contents1 > h3{display:none}
-.page-template-lianxi .contact-grid > #right::before{content:attr(data-title);display:block;font-size:24px;font-weight:500;border-bottom:2px solid var(--ink);padding-bottom:10px;margin:0 0 24px;color:var(--ink)}
+/* ---------- contact page redesign ---------- */
+.lianxi-page{max-width:1200px;margin:0 auto;padding:64px 40px}
+.lianxi-page > h2{margin:0 0 40px;font-size:32px;font-weight:300;letter-spacing:-0.5px}
+.lianxi-layout{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start;margin-bottom:64px}
+
+.lianxi-h{font-size:22px;font-weight:500;margin:0 0 6px;color:var(--ink);letter-spacing:0.5px}
+.lianxi-sub{margin:0 0 24px;color:var(--muted);font-size:14px}
+
+/* form column */
+.lianxi-form-col .forminator-input,
+.lianxi-form-col .forminator-textarea{background:#fff !important;border:1px solid var(--line) !important;border-radius:4px !important;transition:border-color .15s}
+.lianxi-form-col .forminator-input:focus,
+.lianxi-form-col .forminator-textarea:focus{border-color:var(--brand,#1a73c2) !important;outline:none}
+.lianxi-form-col .forminator-button-submit{background:var(--brand,#1a73c2) !important;border:0 !important;padding:14px 32px !important;font-size:15px !important;border-radius:4px !important;cursor:pointer;transition:opacity .15s}
+.lianxi-form-col .forminator-button-submit:hover{opacity:.88}
+
+/* info column */
+.lianxi-info-col{background:var(--soft,#f7f8fa);border-radius:8px;padding:32px 28px;position:sticky;top:80px}
+.lianxi-info-col .lianxi-h{margin-bottom:16px}
+.lianxi-company{font-size:16px;font-weight:600;color:var(--ink);margin:0 0 16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+
+.lianxi-facts{list-style:none;padding:0;margin:0 0 24px;font-size:14px}
+.lianxi-facts li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line)}
+.lianxi-facts li:last-child{border-bottom:0}
+.lianxi-facts .k{color:var(--muted);font-size:13px}
+.lianxi-facts .v{color:var(--ink);font-weight:500}
+
+.lianxi-block{margin-top:24px}
+.lianxi-block-h{font-size:13px;color:var(--brand,#1a73c2);text-transform:uppercase;letter-spacing:1.5px;margin:0 0 12px;font-weight:600}
+.lianxi-contact{list-style:none;padding:0;margin:0;font-size:14px;line-height:1.7}
+.lianxi-contact li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;color:var(--text)}
+.lianxi-contact .ic{flex-shrink:0;width:18px;color:var(--muted);font-size:14px;line-height:1.5}
+.lianxi-contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.lianxi-contact a:hover{border-bottom-color:var(--brand,#1a73c2)}
+.lianxi-contact .muted{color:var(--muted);font-size:13px}
+
+/* map */
+.lianxi-map{width:100%;height:420px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--soft,#f7f8fa)}
+.lianxi-map #baidu-map{width:100%;height:100%}
+.lianxi-map-placeholder{display:flex;align-items:center;justify-content:center;padding:40px}
+.lianxi-map-placeholder .placeholder-inner{text-align:center}
+.lianxi-map-placeholder img{max-width:100%;max-height:340px;object-fit:contain}
+.lianxi-map-placeholder .muted{color:var(--muted);font-size:14px}
+
 @media (max-width:900px){
-  .page-template-lianxi .contact-grid{grid-template-columns:1fr;gap:40px}
-  .page-template-lianxi #contact-form-wrap{grid-column:1;grid-row:auto}
+  .lianxi-page{padding:40px 20px}
+  .lianxi-layout{grid-template-columns:1fr;gap:40px}
+  .lianxi-info-col{position:static}
+  .lianxi-map{height:320px}
 }
 
 /* ---------- footer ---------- */
