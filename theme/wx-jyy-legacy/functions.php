@@ -4,6 +4,8 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
+    // Single, modern stylesheet (theme root style.css).
+    wp_enqueue_style('wx-jyy', get_stylesheet_uri(), [], '2.0');
     wp_enqueue_script('jquery');
     wp_enqueue_script(
         'wx-gundong',
@@ -32,7 +34,6 @@ function wx_lang() {
 }
 function wx_is_jp() { return wx_lang() === 'jp'; }
 
-/** Same URL with the language toggled. */
 function wx_switch_url() {
     $target = wx_is_jp() ? 'zh' : 'jp';
     $uri = preg_replace('/([?&])lang=(zh|jp)/', '$1', $_SERVER['REQUEST_URI']);

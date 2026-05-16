@@ -9,13 +9,7 @@
 <meta name="keywords" content="无锡佳与阳精密机械有限公司：无锡佳与阳,佳与阳,融合日本先进生产技术,切削加工工程塑料制品,工程塑料,切削加工,半导体,液晶,部品,精加工,数码机床">
 <meta name="description" content="无锡佳与阳精密机械有限公司：无锡佳与阳,佳与阳,融合日本先进生产技术,切削加工工程塑料制品,工程塑料,切削加工,半导体,液晶,部品,精加工,数码机床">
 <?php endif; ?>
-<?php
-global $wx_page_css;
-if (!empty($wx_page_css)) {
-    echo '<link rel="stylesheet" type="text/css" href="' . wx_asset($wx_page_css) . '">' . "\n";
-}
-wp_head();
-?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="contentBody">
