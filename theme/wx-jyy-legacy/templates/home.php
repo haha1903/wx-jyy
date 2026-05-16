@@ -116,7 +116,7 @@ $jp = wx_is_jp();
         endif;
         foreach ($news as [$date,$txt]): ?>
             <article class="news-item">
-                <div class="date"><img src="<?= $t ?>/image/home/a2.gif" alt="" class="news-bullet"><span><?= esc_html($date) ?></span></div>
+                <div class="date"><?= esc_html($date) ?></div>
                 <p class="txt"><?= esc_html($txt) ?></p>
             </article>
         <?php endforeach; ?>
