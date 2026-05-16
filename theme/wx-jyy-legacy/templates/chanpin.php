@@ -86,6 +86,25 @@ $jp = wx_is_jp();
             <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin_zonghe5.jpg" /></div>
         </li>
     </ul>
+
+    <h3><?= $jp ? 'その他の事例' : '更多产品案例' ?></h3>
+    <ul>
+        <li>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin1.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin2.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin3.jpg" /></div>
+        </li>
+        <li>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin4.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin5.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin6.jpg" /></div>
+        </li>
+        <li>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin7.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin8.jpg" /></div>
+            <div class="desc_jp"><img src="<?= $t ?>/image/chanpin/chanpin9.jpg" /></div>
+        </li>
+    </ul>
 <?php endif; ?>
 
 <?php get_footer(); ?>

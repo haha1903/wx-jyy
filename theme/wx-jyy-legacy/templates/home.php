@@ -73,7 +73,26 @@ $jp = wx_is_jp();
             <p style="opacity:.85"><?= $jp ? '試作品から大量生産まで、品質と納期を厳しく守ります。' : '从单件试样到批量生产，严守品质与交期。' ?></p>
             <a class="btn-cta" style="background:var(--hp-blue);border-color:var(--hp-blue);color:#fff" href="<?= esc_url(home_url('/jieshao/')) ?>"><?= $jp ? '会社案内' : '了解我们' ?></a>
         </div>
-        <div class="photo"><img src="<?= $t ?>/image/shebei/shebei5.jpg" alt=""></div>
+        <div class="photo"><img src="<?= $t ?>/image/jieshao/shebei4.jpg" alt=""></div>
+    </section>
+
+    <!-- Factory showcase -->
+    <section class="section compact">
+        <h3><?= $jp ? '工場の様子' : '工厂实景' ?></h3>
+        <div class="factory-grid">
+            <figure>
+                <img src="<?= $t ?>/image/shebei/changfang.jpg" alt="">
+                <figcaption><?= $jp ? '工場外観' : '厂房外景' ?></figcaption>
+            </figure>
+            <figure>
+                <img src="<?= $t ?>/image/jieshao/gongsimen.jpg" alt="">
+                <figcaption><?= $jp ? '本社入口' : '公司入口' ?></figcaption>
+            </figure>
+            <figure>
+                <img src="<?= $t ?>/image/jieshao/guanli1.jpg" alt="">
+                <figcaption><?= $jp ? 'チームミーティング' : '管理团队' ?></figcaption>
+            </figure>
+        </div>
     </section>
 
     <!-- News -->
@@ -97,7 +116,7 @@ $jp = wx_is_jp();
         endif;
         foreach ($news as [$date,$txt]): ?>
             <article class="news-item">
-                <div class="date"><?= esc_html($date) ?></div>
+                <div class="date"><img src="<?= $t ?>/image/home/a2.gif" alt="" class="news-bullet"><span><?= esc_html($date) ?></span></div>
                 <p class="txt"><?= esc_html($txt) ?></p>
             </article>
         <?php endforeach; ?>
