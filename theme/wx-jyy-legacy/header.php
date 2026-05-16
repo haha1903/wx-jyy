@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <?php if (wx_is_jp()): ?>
-<meta name="keywords" content="無錫佳&陽精密機械有限会社：無錫佳&陽、佳&陽、マシンニング加工品、ＣＮＣ旋盤加工品、樹脂製品、金属加工、工作機械部品、半導体部品、バルブ、精密加工、プラスチック製品加工、テフロン加工">
-<meta name="description" content="無錫佳&陽精密機械有限会社：無錫佳&陽、佳&陽、マシンニング加工品、ＣＮＣ旋盤加工品、樹脂製品、金属加工、工作機械部品、半導体部品、バルブ、精密加工、プラスチック製品加工、テフロン加工">
+<meta name="keywords" content="無錫諦佳揚科技有限会社：無錫諦佳揚、諦佳揚、マシンニング加工品、ＣＮＣ旋盤加工品、樹脂製品、金属加工、工作機械部品、半導体部品、バルブ、精密加工、プラスチック製品加工、テフロン加工">
+<meta name="description" content="無錫諦佳揚科技有限会社：無錫諦佳揚、諦佳揚、マシンニング加工品、ＣＮＣ旋盤加工品、樹脂製品、金属加工、工作機械部品、半導体部品、バルブ、精密加工、プラスチック製品加工、テフロン加工">
 <?php else: ?>
-<meta name="keywords" content="无锡佳与阳精密机械有限公司：无锡佳与阳,佳与阳,融合日本先进生产技术,切削加工工程塑料制品,工程塑料,切削加工,半导体,液晶,部品,精加工,数码机床">
-<meta name="description" content="无锡佳与阳精密机械有限公司：无锡佳与阳,佳与阳,融合日本先进生产技术,切削加工工程塑料制品,工程塑料,切削加工,半导体,液晶,部品,精加工,数码机床">
+<meta name="keywords" content="无锡谛佳扬科技有限公司，谛佳扬，工程塑料切削加工，精密机械加工，半导体部品，医疗部品，电子部品，POM PEEK PTFE 加工，日本技术合作">
+<meta name="description" content="无锡谛佳扬科技有限公司：与日本知名企业技术合作，专业工程塑料切削加工，服务半导体、医疗、电子等高精度领域。">
 <?php endif; ?>
 <?php wp_head(); ?>
 </head>
@@ -36,13 +36,17 @@
             ['relation last','お問い合わせ',    '/lianxi/'],
         ] : [
             ['home',         '首页',            '/'],
-            ['desc',         '关于佳与阳',      '/jieshao/'],
+            ['desc',         '关于谛佳扬',      '/jieshao/'],
             ['product',      '产品',            '/chanpin/'],
             ['machine',      '设备',            '/shebei/'],
             ['relation last','联系我们',        '/lianxi/'],
         ];
+        $req = '/' . trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/') . '/';
+        if ($req === '//') $req = '/';
         foreach ($items as [$cls, $label, $url]) {
-            echo '<li class="' . esc_attr($cls) . '"><a href="' . esc_url(home_url($url)) . '">' . esc_html($label) . '</a></li>';
+            $active = ($url === '/' && $req === '/') || ($url !== '/' && strpos($req, $url) === 0);
+            $css_cls = trim($cls . ($active ? ' active' : ''));
+            echo '<li class="' . esc_attr($css_cls) . '"><a href="' . esc_url(home_url($url)) . '">' . esc_html($label) . '</a></li>';
         }
         ?>
     </ul>

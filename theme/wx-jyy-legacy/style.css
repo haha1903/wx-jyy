@@ -65,8 +65,8 @@ body{
   background:var(--hp-blue);transform:scaleX(0);transform-origin:left;transition:transform .2s;
 }
 #navi li a:hover::after{transform:scaleX(1)}
-#navi li.home a{color:var(--hp-blue)}
-#navi li.home a::after{transform:scaleX(1)}
+#navi li.active a{color:var(--hp-blue)}
+#navi li.active a::after{transform:scaleX(1)}
 
 #pan,.topLink{display:none}
 

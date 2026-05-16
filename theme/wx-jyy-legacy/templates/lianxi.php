@@ -27,7 +27,7 @@ $jp = wx_is_jp();
     <p class="s13a">TEL : 86-510-85606316 / FAX : 86-510-85626316</p>
     <p></p><br>
     <p class="s13a">E-mail : mengweibin@wx-jyy.com</p>
-    <h5>佳陽貿易</h5>
+    <h5>諦佳揚貿易</h5>
     <p class="s13a">〒453-0863</p>
     <p class="s13a">愛知県名古屋市中村区八社2－164</p>
     <p class="s13a">TEL / FAX  :052-413-5519</p>
