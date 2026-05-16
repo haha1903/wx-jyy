@@ -1,19 +1,27 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "wx-jyy"
+  name: wx-jyy
+  namespace: wx-jyy
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: "wx-jyy"
-  replicas: 2
+      app: wx-jyy
   template:
     metadata:
       labels:
-        app: "wx-jyy"
+        app: wx-jyy
     spec:
       containers:
-        - name: "wx-jyy"
-          image: "haiacr.azurecr.io/wx-jyy"
+        - name: wx-jyy
+          image: ghcr.io/haha1903/wx-jyy:latest
+          imagePullPolicy: Always
           ports:
-          - containerPort: 80
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
