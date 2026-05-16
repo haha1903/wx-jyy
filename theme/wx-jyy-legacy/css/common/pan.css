@@ -1,0 +1,12 @@
+/* CSS Document */
+
+#pan {
+	list-style-type:none;
+	padding:5px 0px 0px 10px;
+	}
+
+#pan li {
+	float:left;
+	font-size: 78%;
+	}
+

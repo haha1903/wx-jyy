@@ -1,0 +1,57 @@
+/* CSS Document */
+
+#left {
+	width:190px;
+	float:left;
+	}
+
+#left ul {
+	background-image:url(/image/common/left/outline/back.gif);
+	background-repeat:repeat-y;
+	list-style-type:none;
+	padding-left:10px;
+	}
+
+#left ul a {
+	display:block;
+	width:160px;
+	height:30px;
+	text-indent:-9999px;
+	}
+
+#left ul a:hover {
+	background-position:-160px 0px;
+	}
+
+#left .a a {
+	background-image:url(/image/common/left/outline/1.gif);
+	}
+
+#left .b a {
+	background-image:url(/image/common/left/outline/2.gif);
+	}
+
+#left .c a {
+	background-image:url(/image/common/left/outline/3.gif);
+	}
+
+#left .d a {
+	background-image:url(/image/common/left/outline/4.gif);
+	}
+
+#left .e a {
+	background-image:url(/image/common/left/outline/5.gif);
+	}
+
+#left .f a {
+	background-image:url(/image/common/left/outline/6.gif);
+	}
+
+#left .g a {
+	background-image:url(/image/common/left/outline/7.gif);
+	}
+
+
+
+
+

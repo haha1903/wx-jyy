@@ -1,0 +1,44 @@
+/* CSS Document */
+
+#left {
+	width:190px;
+	float:left;
+	}
+
+#left ul {
+	background-image:url(/image/common/left/valve/back.gif);
+	background-repeat:repeat-y;
+	list-style-type:none;
+	padding-left:10px;
+	}
+
+#left ul a {
+	display:block;
+	width:160px;
+	height:30px;
+	text-indent:-9999px;
+	}
+
+#left ul a:hover {
+	background-position:-160px 0px;
+	}
+
+#left .a a {
+	background-image:url(/image/common/left/valve/1.gif);
+	}
+
+#left .b a {
+	background-image:url(/image/common/left/valve/2.gif);
+	}
+
+#left .c a {
+	background-image:url(/image/common/left/valve/3.gif);
+	}
+
+#left .d a {
+	background-image:url(/image/common/left/valve/4.gif);
+	}
+
+
+
+
