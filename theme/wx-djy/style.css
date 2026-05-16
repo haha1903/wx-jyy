@@ -259,15 +259,19 @@ body:not(.home) #contents1.about-page{padding:0;max-width:none}
 
 /* ---------- contact page two-column layout ---------- */
 .page-template-lianxi #contents1{max-width:1200px;margin:0 auto}
-.page-template-lianxi .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.page-template-lianxi .contact-grid #right{max-width:none;margin:0;padding:0}
-.page-template-lianxi #contact-form-wrap{max-width:none !important;margin:0 !important;padding:0 !important;clear:none !important}
-.page-template-lianxi #contact-form-wrap h3{text-align:left !important;margin:0 0 16px !important;font-size:20px}
+.page-template-lianxi .contact-grid{display:grid;grid-template-columns:3fr 2fr;gap:40px;align-items:start;margin-top:24px}
+.page-template-lianxi .contact-grid > #right{max-width:none;margin:0;padding:0;grid-column:1}
+.page-template-lianxi #contact-form-wrap{grid-column:2;grid-row:1;max-width:none !important;margin:0 !important;padding:0 !important;clear:none !important;border-top:2px solid var(--ink);padding-top:24px !important}
+.page-template-lianxi #contact-form-wrap h3{text-align:left !important;margin:0 0 16px !important;font-size:24px;font-weight:500;border:0 !important;padding:0 !important}
 .page-template-lianxi .forminator-row{margin-bottom:12px}
 .page-template-lianxi .forminator-input,
 .page-template-lianxi .forminator-textarea{background:#fff !important;border:1px solid var(--line) !important}
+/* hide the original h3 (公司概要) on contact page since grid splits headers per column */
+.page-template-lianxi #contents1 > h3{display:none}
+.page-template-lianxi .contact-grid > #right::before{content:attr(data-title);display:block;font-size:24px;font-weight:500;border-bottom:2px solid var(--ink);padding-bottom:10px;margin:0 0 24px;color:var(--ink)}
 @media (max-width:900px){
   .page-template-lianxi .contact-grid{grid-template-columns:1fr;gap:40px}
+  .page-template-lianxi #contact-form-wrap{grid-column:1;grid-row:auto}
 }
 
 /* ---------- footer ---------- */

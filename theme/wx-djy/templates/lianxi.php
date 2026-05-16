@@ -12,7 +12,7 @@ $jp_label = wx_field('jp_label', wx_options_pid());
     <h2><?= $jp ? 'クシダ工業の機械加工' : '联系我们' ?></h2>
     <h3><?= esc_html(wx_field('contact_intro', $page_id) ?: ($jp ? 'お問い合わせ' : '公司概要')) ?></h3>
     <div class="contact-grid">
-    <div id="right">
+    <div id="right" data-title="<?= esc_attr(wx_field('contact_intro', $page_id) ?: ($jp ? 'お問い合わせ' : '公司概要')) ?>">
         <table align="center">
             <?php if ($v = wx_field('company_name', wx_options_pid())): ?>
                 <tr><th class="s14a"><?= $jp ? '会社名' : '公司名称' ?></th><td class="s14a"><?= esc_html($v) ?></td></tr>
