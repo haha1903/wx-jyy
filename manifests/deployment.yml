@@ -5,6 +5,8 @@ metadata:
   namespace: wx-jyy
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: wx-jyy
@@ -14,14 +16,54 @@ spec:
         app: wx-jyy
     spec:
       containers:
-        - name: wx-jyy
-          image: ghcr.io/haha1903/wx-jyy:latest
-          imagePullPolicy: Always
+        - name: wordpress
+          image: wordpress:6-php8.3-apache
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mariadb:3306
+            - name: WORDPRESS_DB_NAME
+              value: wordpress
+            - name: WORDPRESS_DB_USER
+              value: wordpress
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: wp-secrets
+                  key: db-password
+            - name: WORDPRESS_AUTH_KEY
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: AUTH_KEY } }
+            - name: WORDPRESS_SECURE_AUTH_KEY
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: SECURE_AUTH_KEY } }
+            - name: WORDPRESS_LOGGED_IN_KEY
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: LOGGED_IN_KEY } }
+            - name: WORDPRESS_NONCE_KEY
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: NONCE_KEY } }
+            - name: WORDPRESS_AUTH_SALT
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: AUTH_SALT } }
+            - name: WORDPRESS_SECURE_AUTH_SALT
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: SECURE_AUTH_SALT } }
+            - name: WORDPRESS_LOGGED_IN_SALT
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: LOGGED_IN_SALT } }
+            - name: WORDPRESS_NONCE_SALT
+              valueFrom: { secretKeyRef: { name: wp-secrets, key: NONCE_SALT } }
+            - name: WORDPRESS_CONFIG_EXTRA
+              value: |
+                define('FS_METHOD', 'direct');
+                if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+                  $_SERVER['HTTPS'] = 'on';
+                }
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: uploads
+              mountPath: /var/www/html
           readinessProbe:
             httpGet:
-              path: /
+              path: /wp-login.php
               port: 80
-            initialDelaySeconds: 3
+            initialDelaySeconds: 20
             periodSeconds: 10
+      volumes:
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: wx-jyy-uploads

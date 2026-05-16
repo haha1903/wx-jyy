@@ -1,9 +1,0 @@
-version: "3"
-services:
-  wxjyy:
-    image: php:apache
-    volumes:
-      - .:/var/www/html/
-    ports:
-      - "8001:80"
-

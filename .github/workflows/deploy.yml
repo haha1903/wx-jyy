@@ -1,36 +1,21 @@
-name: build-deploy
+name: deploy
 on:
   push:
     branches: [master]
+    paths:
+      - 'manifests/**'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
-  packages: write
   id-token: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: docker/setup-buildx-action@v3
-
-      - uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: docker/build-push-action@v5
-        with:
-          context: .
-          platforms: linux/amd64
-          push: true
-          tags: |
-            ghcr.io/haha1903/wx-jyy:latest
-            ghcr.io/haha1903/wx-jyy:${{ github.sha }}
 
       - uses: azure/login@v2
         with:
@@ -41,7 +26,8 @@ jobs:
       - name: Get kubeconfig
         run: az aks get-credentials -g hai -n haiaks --overwrite-existing
 
-      - name: Rollout
+      - name: Apply manifests
         run: |
-          kubectl -n wx-jyy set image deploy/wx-jyy wx-jyy=ghcr.io/haha1903/wx-jyy:${{ github.sha }}
+          kubectl -n wx-jyy apply -f manifests/
+          kubectl -n wx-jyy rollout status deploy/mariadb --timeout=180s
           kubectl -n wx-jyy rollout status deploy/wx-jyy --timeout=180s
