@@ -115,12 +115,18 @@ body:not(.home) #contents1 > h3{text-align:left;font-size:24px;font-weight:500;b
   min-height:520px;display:flex;align-items:flex-end;
 }
 .hp-hero img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;
+}
+.hp-hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.2) 100%),
+             linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6) 100%);
+  z-index:1;
 }
 .hp-hero .copy{position:relative;padding:0 60px 60px;max-width:760px;color:#fff;z-index:2}
-.hp-hero .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-bottom:14px}
-.hp-hero h2{color:#fff;font-size:54px;font-weight:300;line-height:1.05;letter-spacing:-1px;margin:0 0 16px}
-.hp-hero p{color:#fff;font-size:18px;opacity:.95;margin:0 0 28px;max-width:560px;line-height:1.45}
+.hp-hero .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-bottom:14px;color:#fff}
+.hp-hero h2{color:#fff;font-size:54px;font-weight:300;line-height:1.05;letter-spacing:-1px;margin:0 0 16px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hp-hero p{color:#fff;font-size:18px;opacity:.95;margin:0 0 28px;max-width:560px;line-height:1.45;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .hp-hero .actions{display:flex;gap:12px;flex-wrap:wrap}
 .hp-hero .btn-cta{background:#fff;color:var(--ink);border-color:#fff}
 .hp-hero .btn-cta:hover{background:transparent;color:#fff;border-color:#fff}
@@ -146,13 +152,14 @@ body:not(.home) #contents1 > h3{text-align:left;font-size:24px;font-weight:500;b
 
 /* Belief/statement section (HP "We believe..." style) */
 .belief{
-  background:#000;color:#fff;padding:0;margin:0;position:relative;overflow:hidden;
-  min-height:420px;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  background:#0a0a0a;color:#fff;padding:0;margin:0;position:relative;overflow:hidden;
+  min-height:380px;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;
 }
-.belief .copy{padding:80px;}
-.belief h3{color:#fff;text-align:left;font-size:42px;font-weight:300;line-height:1.1;margin:0 0 20px}
-.belief p{color:#fff;opacity:.9;font-size:16px;line-height:1.6;margin:0 0 24px}
-.belief .photo{position:relative;height:100%;min-height:420px}
+.belief .copy{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.belief h3{color:#fff;text-align:left;font-size:36px;font-weight:300;line-height:1.15;margin:0 0 18px}
+.belief p{color:#e5e5e5;opacity:1;font-size:15px;line-height:1.7;margin:0 0 14px}
+.belief p:last-of-type{margin-bottom:24px}
+.belief .photo{position:relative;min-height:380px}
 .belief .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* News (HP "In the news" style) */

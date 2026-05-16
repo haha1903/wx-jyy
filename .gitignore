@@ -1,3 +1,5 @@
 *.iml
 /.idea
 .gstack/
+theme/.DS_Store
+.DS_Store
