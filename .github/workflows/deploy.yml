@@ -37,6 +37,6 @@ jobs:
         run: |
           POD=$(kubectl -n wx-jyy get pod -l app=wx-jyy -o jsonpath='{.items[0].metadata.name}')
           # Copy theme files; tar over the exec channel to preserve perms and skip dotfiles
-          tar -C theme -cf - wx-jyy-legacy | \
+          tar -C theme -cf - wx-djy | \
             kubectl -n wx-jyy exec -i "$POD" -- tar -xf - -C /var/www/html/wp-content/themes
-          kubectl -n wx-jyy exec "$POD" -- chown -R www-data:www-data /var/www/html/wp-content/themes/wx-jyy-legacy
+          kubectl -n wx-jyy exec "$POD" -- chown -R www-data:www-data /var/www/html/wp-content/themes/wx-djy
