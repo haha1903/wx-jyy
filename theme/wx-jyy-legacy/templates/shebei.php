@@ -1,48 +1,43 @@
 <?php
 /* Template Name: 设备 */
-$wx_page_css = '/css/shebei/index.css';
 get_header();
-$t = get_template_directory_uri();
 $jp = wx_is_jp();
+
+$sections = get_terms(['taxonomy' => 'equipment_section', 'hide_empty' => false, 'orderby' => 'term_order', 'order' => 'ASC']);
 ?>
 
-<ul id="pan">
-    <?php if ($jp): ?>
-        <li><a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a></li>
-        <li>&nbsp;&gt;&nbsp;主要設備</li>
-    <?php else: ?>
-        <li><a href="<?php echo esc_url(home_url('/')); ?>">首页</a></li>
-        <li>&nbsp;&gt;&nbsp;主要设备</li>
-    <?php endif; ?>
-</ul>
-
 <div id="contents1">
-    <h2>クシダ工業の工作機械</h2>
+    <h2><?= $jp ? 'クシダ工業の工作機械' : '主要设备' ?></h2>
 
-    <h3>主要设备</h3>
+<?php foreach ($sections as $sec):
+    $jp_name = get_term_meta($sec->term_id, 'name_jp', true);
+    $heading = $jp && $jp_name ? $jp_name : $sec->name;
+
+    $items = get_posts([
+        'post_type'      => 'equipment',
+        'tax_query'      => [['taxonomy' => 'equipment_section', 'terms' => $sec->term_id]],
+        'orderby'        => 'menu_order date',
+        'order'          => 'ASC',
+        'posts_per_page' => -1,
+    ]);
+    if (!$items) continue;
+?>
+    <h3><?= esc_html($heading) ?></h3>
     <ul>
         <li>
-            <div class="desc"><?= $jp ? 'アメリカ原装輸入 哈斯VF-2' : '美国原装进口 哈斯VF-2' ?><br><img src="<?= $t ?>/image/shebei/shebei1.jpg" alt="设备1"></div>
-            <div class="img">LG MAZAK 200-IIL<br><img src="<?= $t ?>/image/shebei/shebei2.jpg" alt="设备2"></div>
+        <?php foreach ($items as $e):
+            $img = get_the_post_thumbnail_url($e->ID, 'medium_large');
+            if (!$img) continue;
+            $title_jp = get_field('equip_title_jp', $e->ID);
+            $caption = $jp && $title_jp ? $title_jp : $e->post_title;
+        ?>
+            <div class="desc">
+                <?= esc_html($caption) ?><br>
+                <img src="<?= esc_url($img) ?>" alt="<?= esc_attr($caption) ?>">
+            </div>
+        <?php endforeach; ?>
         </li>
-        <li>
-            <div class="desc">MITUTOYO<?= $jp ? '光学内視鏡(関連会社)' : '光学内视镜（合作企业）' ?><br><img src="<?= $t ?>/image/shebei/shebei3.jpg" alt="设备1"></div>
-            <div class="img">MITUTOYO<?= $jp ? '三次元測定器(関連会社)' : ' 三次元测定器（合作企业）' ?><br><img src="<?= $t ?>/image/shebei/shebei5.jpg" alt="设备2"></div>
-        </li>
     </ul>
-
-<?php if (!$jp): ?>
-    <h3>加工中心</h3>
-    <ul>
-        <li><img src="<?= $t ?>/image/shebei/chejian.jpg" alt="设备1"></li>
-        <li>&nbsp;</li>
-        <li><img src="<?= $t ?>/image/shebei/chejian2.jpg" alt="设备1"></li>
-    </ul>
-
-    <h3>加工工序</h3>
-    <ul>
-        <li><img src="<?= $t ?>/image/shebei/gongxu.jpg" alt="设备1"></li>
-    </ul>
-<?php endif; ?>
+<?php endforeach; ?>
 
 <?php get_footer(); ?>
