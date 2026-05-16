@@ -131,12 +131,10 @@ $belief_cta_url = get_field('belief_cta_url', $page_id) ?: '/jieshao/';
                 $date_str = get_field('news_date_zh');
                 if ($jp && get_field('news_date_jp')) $date_str = get_field('news_date_jp');
                 $body = wx_field('news_body');
-                $title_jp = get_field('news_title_jp');
-                $display_title = $jp && $title_jp ? $title_jp : get_the_title();
             ?>
                 <article class="news-item">
                     <div class="date"><?= esc_html($date_str) ?></div>
-                    <p class="txt"><?= $body ? wp_kses_post($body) : esc_html($display_title) ?></p>
+                    <p class="txt"><?= $body ? wp_kses_post($body) : esc_html(get_the_title()) ?></p>
                 </article>
             <?php endwhile; wp_reset_postdata(); ?>
         </div>

@@ -143,8 +143,7 @@ add_action('acf/init', function () {
         'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'news']]],
         'fields'   => array_merge(
             $txt2('news_date', '日期 (例: 2011 / 10)'),
-            $area2('news_body', '正文'),
-            [['key' => 'f_news_title_jp', 'name' => 'news_title_jp', 'label' => '日本語タイトル (标题填中文,这里填日语)', 'type' => 'text']]
+            $area2('news_body', '正文')
         ),
     ]);
 
