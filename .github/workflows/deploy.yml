@@ -4,6 +4,7 @@ on:
     branches: [master]
     paths:
       - 'manifests/**'
+      - 'theme/**'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
@@ -31,3 +32,11 @@ jobs:
           kubectl -n wx-jyy apply -f manifests/
           kubectl -n wx-jyy rollout status deploy/mariadb --timeout=180s
           kubectl -n wx-jyy rollout status deploy/wx-jyy --timeout=180s
+
+      - name: Sync theme into pod
+        run: |
+          POD=$(kubectl -n wx-jyy get pod -l app=wx-jyy -o jsonpath='{.items[0].metadata.name}')
+          # Copy theme files; tar over the exec channel to preserve perms and skip dotfiles
+          tar -C theme -cf - wx-jyy-legacy | \
+            kubectl -n wx-jyy exec -i "$POD" -- tar -xf - -C /var/www/html/wp-content/themes
+          kubectl -n wx-jyy exec "$POD" -- chown -R www-data:www-data /var/www/html/wp-content/themes/wx-jyy-legacy
