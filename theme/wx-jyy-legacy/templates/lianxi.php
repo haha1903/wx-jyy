@@ -9,7 +9,7 @@ $jp_label = wx_field('jp_label', wx_options_pid());
 
 <div id="contents1">
     <h2><?= $jp ? 'クシダ工業の機械加工' : '联系我们' ?></h2>
-    <h3><?= esc_html(wx_field('contact_intro') ?: ($jp ? 'お問い合わせ' : '公司概要')) ?></h3>
+    <h3><?= esc_html(wx_field('contact_intro', $page_id) ?: ($jp ? 'お問い合わせ' : '公司概要')) ?></h3>
     <div id="right">
         <table align="center">
             <?php if ($v = wx_field('company_name', wx_options_pid())): ?>
@@ -42,7 +42,7 @@ $jp_label = wx_field('jp_label', wx_options_pid());
                     <?php if ($v = get_field('cn_fax', wx_options_pid())): ?><?= $jp ? 'FAX : ' : '传真 ' ?><?= esc_html($v) ?><br><?php endif; ?>
                     <?php if ($v = get_field('cn_mobile', wx_options_pid())): ?><?= $jp ? '携帯 : ' : '手机 ' ?><?= esc_html($v) ?><br><?php endif; ?>
                     <?php if ($v = get_field('cn_postcode', wx_options_pid())): ?><?= $jp ? '〒' : '邮编 ' ?><?= esc_html($v) ?><br><?php endif; ?>
-                    <?php if ($map = get_field('cn_map', wx_options_pid())): ?><img src="<?= esc_url($map) ?>" alt=""><br><br><?php endif; ?>
+                    <?php if ($map = wx_img_url(get_field('cn_map', wx_options_pid()))): ?><img src="<?= esc_url($map) ?>" alt=""><br><br><?php endif; ?>
 
                     <strong><?= esc_html($jp_label) ?></strong><br>
                     <?php if ($v = get_field('jp_postcode', wx_options_pid())): ?>〒<?= esc_html($v) ?><br><?php endif; ?>

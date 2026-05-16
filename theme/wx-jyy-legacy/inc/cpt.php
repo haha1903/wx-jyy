@@ -116,6 +116,14 @@ function wx_sub_field($name) {
     return $v;
 }
 
+/** Normalize ACF image field (id / array / url) to a plain URL. */
+function wx_img_url($v) {
+    if (!$v) return '';
+    if (is_array($v)) return $v['url'] ?? '';
+    if (is_numeric($v)) return wp_get_attachment_url((int) $v) ?: '';
+    return (string) $v;
+}
+
 /** Options live on the home page (ACF Free has no options page). */
 function wx_options_pid() {
     $pid = (int) get_option('page_on_front');
