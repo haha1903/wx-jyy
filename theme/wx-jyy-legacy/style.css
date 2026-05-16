@@ -174,27 +174,29 @@ body{
 .box .right img{display:inline-block;border-radius:8px;border:1px solid var(--c-line);max-width:60%}
 
 /* ============ CHANPIN PAGE ============ */
-/* Force a stable 3-col grid regardless of legacy markup variance */
+.chanpin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 24px}
 #contents1 ul li{margin:0}
-.desc_jp{
-  display:inline-block;vertical-align:top;width:calc(33.333% - 12px);margin:0 6px 16px;text-align:center;
-}
+/* The legacy markup uses .desc_jp inline-blocks; turn parent <li> into a grid */
+#contents1 ul li:has(> .desc_jp){display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.desc_jp{text-align:center}
 .desc_jp img{
-  width:100%;aspect-ratio:1/1;object-fit:cover;
-  border:1px solid var(--c-line);border-radius:8px;background:var(--c-soft);
+  width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;
+  border:1px solid var(--c-line);border-radius:8px;
   box-shadow:var(--shadow);transition:transform .2s;
 }
 .desc_jp img:hover{transform:scale(1.02)}
 
 /* ============ SHEBEI PAGE ============ */
+.shebei-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 24px}
 .desc,.img{
-  display:inline-block;vertical-align:top;width:calc(50% - 12px);margin:0 5px 24px;
-  text-align:center;font-size:13px;color:var(--c-muted);font-weight:500;
+  text-align:center;font-size:13.5px;color:var(--c-muted);font-weight:500;line-height:1.4;
 }
 .desc img,.img img{
   margin:10px auto 0;border:1px solid var(--c-line);border-radius:8px;width:100%;
   aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow);
 }
+/* Legacy markup: when desc/img sit directly inside <li>, use flex on the li */
+#contents1 ul li:has(> .desc, > .img){display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
 
 /* ============ LIANXI PAGE ============ */
 #right{margin-top:8px}
