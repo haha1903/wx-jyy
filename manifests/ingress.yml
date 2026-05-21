@@ -6,16 +6,6 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: wx-jyy.changhai.me
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wx-jyy
-                port:
-                  number: 80
     - host: wx-jyy.com
       http:
         paths:
