@@ -2,8 +2,10 @@
 
 无锡谛佳扬科技有限公司（DJY）官网。WordPress 站，跑在 AKS 上，git push 自动部署。
 
-- 前台：https://wx-jyy.changhai.me/  （等 wx-jyy.com transfer 完会再加上）
-- 后台：https://wx-jyy.changhai.me/wp-admin/
+- 前台：https://wx-jyy.com/
+- 后台：https://wx-jyy.com/wp-admin/
+- `www.wx-jyy.com` → 301 到 apex（WP canonical）
+- 老的 `wx-jyy.changhai.me` 已下线（ingress 已移除）
 
 ---
 
@@ -17,7 +19,7 @@ wx-jyy/
 │   ├── mariadb.yml               # MariaDB 11 deployment + service
 │   ├── deployment.yml            # WordPress 6 + PHP 8.3 + Apache (image: wordpress:6-php8.3-apache)
 │   ├── service.yml               # ClusterIP for nginx ingress
-│   └── ingress.yml               # 路由 wx-jyy.changhai.me / wx-jyy.com / www.wx-jyy.com
+│   └── ingress.yml               # 路由 wx-jyy.com / www.wx-jyy.com
 │
 ├── theme/wx-djy/                 # WordPress 主题 — 唯一会被 CI 同步进 pod 的代码
 │   ├── style.css                 # 全部前台 CSS（HP 风格白底蓝字）+ 主题元信息
@@ -57,12 +59,17 @@ wx-jyy/
 | 镜像 registry | ghcr.io/haha1903/wx-jyy:latest | （早期建的，但现在用官方 WP 镜像，自定义镜像未必再 build） |
 
 **域名状态**：
-- `wx-jyy.changhai.me` ✅ 工作中（cloudflared route + Cloudflare Universal SSL）
-- `wx-jyy.com` / `www.wx-jyy.com` — DNS host 转移到 Cloudflare 进行中。Ingress 已配，等 zone Active 跑：
-  ```
-  cloudflared tunnel route dns 9f29f99c-7cb8-4f99-8af4-9bb5ecc7b617 wx-jyy.com
-  cloudflared tunnel route dns 9f29f99c-7cb8-4f99-8af4-9bb5ecc7b617 www.wx-jyy.com
-  ```
+- `wx-jyy.com` ✅ apex（主域名，cloudflared tunnel CNAME，Cloudflare proxied + Universal SSL）
+- `www.wx-jyy.com` ✅ → 301 到 apex
+- `wx-jyy.changhai.me` 已下线（ingress + DNS 都已移除）
+
+DNS 路由命令（历史参考）：
+```
+cloudflared tunnel route dns 9f29f99c-7cb8-4f99-8af4-9bb5ecc7b617 wx-jyy.com
+cloudflared tunnel route dns 9f29f99c-7cb8-4f99-8af4-9bb5ecc7b617 www.wx-jyy.com
+```
+
+⚠️ `~/.cloudflared/cert.pem` 当前是 wx-jyy.com 账号的 cert（2026-05-21 重新 login 拿的，因为之前的 changhai.me cert 无法管理新 zone）。备份在 `/tmp/cert.changhai.pem`，删干净前别动。
 
 ---
 
@@ -149,7 +156,7 @@ wx_sub_field('text')       // same for ACF sub-fields
 ### 改文字 / 图片 / 加新闻 / 加产品
 **走 wp-admin，不用碰 git**：
 
-1. 登 https://wx-jyy.changhai.me/wp-admin
+1. 登 https://wx-jyy.com/wp-admin
 2. 改完保存
 3. 前台立即生效（CSS 用 `?ver=filemtime` 时间戳缓存破解，但 Cloudflare 边缘可能缓存几分钟）
 
@@ -349,7 +356,7 @@ chmod +x /usr/local/bin/wp && wp --version --allow-root
 
 ## TODO / Future
 
-- [ ] `wx-jyy.com` zone transfer 完成后挂 DNS（cloudflared route）
+- [x] ~~`wx-jyy.com` zone transfer 完成后挂 DNS（cloudflared route）~~ ✅ 完成（2026-05-21）
 - [ ] 数据库 + uploads 自动备份 CronJob（推 Azure Blob 或 GitHub Releases）
 - [x] ~~联系表单接通（Forminator + lianxi 模板）~~ ✅ 完成
 - [x] ~~邮件发送（WP Mail SMTP + Resend）~~ ✅ 完成
