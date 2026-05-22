@@ -57,13 +57,47 @@ spec:
           volumeMounts:
             - name: uploads
               mountPath: /var/www/html
+            - name: apache-mpm
+              mountPath: /etc/apache2/mods-enabled/mpm_prefork.conf
+              subPath: mpm_prefork.conf
+          resources:
+            requests:
+              cpu: 10m
+              memory: 150Mi
+            limits:
+              memory: 350Mi
           readinessProbe:
             httpGet:
-              path: /wp-login.php
+              path: /wp-includes/images/blank.gif
               port: 80
             initialDelaySeconds: 20
-            periodSeconds: 10
+            periodSeconds: 30
+          livenessProbe:
+            httpGet:
+              path: /wp-includes/images/blank.gif
+              port: 80
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            failureThreshold: 3
       volumes:
         - name: uploads
           persistentVolumeClaim:
             claimName: wx-jyy-uploads
+        - name: apache-mpm
+          configMap:
+            name: apache-mpm-prefork
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apache-mpm-prefork
+  namespace: wx-jyy
+data:
+  mpm_prefork.conf: |
+    <IfModule mpm_prefork_module>
+        StartServers            1
+        MinSpareServers         1
+        MaxSpareServers         2
+        MaxRequestWorkers       8
+        MaxConnectionsPerChild  500
+    </IfModule>
